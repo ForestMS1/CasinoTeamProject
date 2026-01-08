@@ -1,5 +1,7 @@
 #include "pch.h"
 #include "CMainGame.h"
+#include "CTitleScene.h"
+#include "CSceneMgr.h"
 
 CMainGame::CMainGame() : m_iFps(0), m_dwLastTime(GetTickCount())
 {
@@ -18,14 +20,27 @@ void CMainGame::Initialize()
 	m_hBitMap = CreateCompatibleBitmap(m_hDC, WINCX, WINCY);
 	HBITMAP hBit = (HBITMAP)SelectObject(m_hBackDC, m_hBitMap);
 	DeleteObject(hBit);
+
+
+	// 씬매니저에 씬 등록
+	CScene* pScene = new CTitleScene;
+	GETSINGLE(CSceneMgr)->CreateScene(L"Title", pScene);
+
+
+
+
+	// 처음 보여줄 씬으로 전환
+	GETSINGLE(CSceneMgr)->ChangeScene(L"Title");
 }
 
 void CMainGame::Update()
 {
+	GETSINGLE(CSceneMgr)->Update();
 }
 
 void CMainGame::Late_Update()
 {
+	GETSINGLE(CSceneMgr)->Late_Update();
 }
 
 void CMainGame::Render()
@@ -42,6 +57,8 @@ void CMainGame::Render()
 
 		m_dwLastTime = curTime;
 	}
+
+	GETSINGLE(CSceneMgr)->Render(m_hBackDC);
 
 	BitBlt(m_hDC,				// 복사 받을 DC
 		0,						// 복사 받을 공간의 LEFT	

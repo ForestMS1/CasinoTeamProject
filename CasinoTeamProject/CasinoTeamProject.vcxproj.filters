@@ -16,6 +16,18 @@
     <Filter Include="MainGame">
       <UniqueIdentifier>{c00b3de6-a4e6-419a-8485-9739cbc70249}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Manager">
+      <UniqueIdentifier>{2912a05c-ff1e-41b8-b77a-67ccdeeb2407}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Manager\SceneMgr">
+      <UniqueIdentifier>{de1a9635-cdbb-4dee-b29e-8201e275a1da}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene">
+      <UniqueIdentifier>{f371ef0c-0090-4457-a70f-25a834f2c0a8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\TitleScene">
+      <UniqueIdentifier>{e489b6b0-e33c-4f3c-a140-a2236443472a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -39,6 +51,15 @@
     <ClInclude Include="CMainGame.h">
       <Filter>MainGame</Filter>
     </ClInclude>
+    <ClInclude Include="CSceneMgr.h">
+      <Filter>Manager\SceneMgr</Filter>
+    </ClInclude>
+    <ClInclude Include="CScene.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="CTitleScene.h">
+      <Filter>Scene\TitleScene</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CasinoTeamProject.cpp">
@@ -49,6 +70,15 @@
     </ClCompile>
     <ClCompile Include="CMainGame.cpp">
       <Filter>MainGame</Filter>
+    </ClCompile>
+    <ClCompile Include="CSceneMgr.cpp">
+      <Filter>Manager\SceneMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="CScene.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="CTitleScene.cpp">
+      <Filter>Scene\TitleScene</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

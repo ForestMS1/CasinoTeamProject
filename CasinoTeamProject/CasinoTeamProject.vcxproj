@@ -129,6 +129,9 @@
   <ItemGroup>
     <ClInclude Include="CasinoTeamProject.h" />
     <ClInclude Include="CMainGame.h" />
+    <ClInclude Include="CScene.h" />
+    <ClInclude Include="CSceneMgr.h" />
+    <ClInclude Include="CTitleScene.h" />
     <ClInclude Include="Define.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="pch.h" />
@@ -138,6 +141,9 @@
   <ItemGroup>
     <ClCompile Include="CasinoTeamProject.cpp" />
     <ClCompile Include="CMainGame.cpp" />
+    <ClCompile Include="CScene.cpp" />
+    <ClCompile Include="CSceneMgr.cpp" />
+    <ClCompile Include="CTitleScene.cpp" />
     <ClCompile Include="pch.cpp" />
   </ItemGroup>
   <ItemGroup>
