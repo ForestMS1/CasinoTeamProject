@@ -14,13 +14,20 @@ public:
 	virtual void Release()								PURE;
 
 public:
-	INFO			Get_Info()								{ return m_tInfo; }
-	RENDERID		Get_RenderID() const					{ return m_eRender; }
-	
-	void			Set_PosX(float _x)						{ m_tInfo.vPos.x = _x; }
-	void			Set_PosY(float _y)						{ m_tInfo.vPos.y = _y; }
-	bool			Is_Dead() const							{ return m_bIsDead; }
-	void			Set_Dead()								{ m_bIsDead = true; }
+	INFO			Get_Info()										{ return m_tInfo; }
+	RENDERID		Get_RenderID() const							{ return m_eRender; }
+
+	// 위치
+	void			Set_Pos(float _x, float _y, float _z = 0.f)		{ m_tInfo.vPos.x = _x; m_tInfo.vPos.y = _y; m_tInfo.vPos.z = _z; }
+	void			Set_PosX(float _x)								{ m_tInfo.vPos.x = _x; }
+	void			Set_PosY(float _y)								{ m_tInfo.vPos.y = _y; }
+	void			Set_PosZ(float _z)								{ m_tInfo.vPos.z = _z; }
+
+	// 크기
+	void			Set_Scale(float _fCX, float _fCY)				{ m_tInfo.fCX = _fCX; m_tInfo.fCY = _fCY; }
+
+	bool			Is_Dead() const									{ return m_bIsDead; }
+	void			Set_Dead()										{ m_bIsDead = true; }
 
 
 protected:

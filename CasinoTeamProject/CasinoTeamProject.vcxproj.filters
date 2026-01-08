@@ -43,6 +43,12 @@
     <Filter Include="Manager\CollisionMgr">
       <UniqueIdentifier>{3e5640c9-764c-4970-8410-3982d0df4f54}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Design">
+      <UniqueIdentifier>{72464302-974f-46fa-81a3-ca906350086d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Design\AbstractFactory">
+      <UniqueIdentifier>{4af09abe-9d67-49cd-b91d-e15d83612c00}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -90,6 +96,9 @@
     <ClInclude Include="CCollisionMgr.h">
       <Filter>Manager\CollisionMgr</Filter>
     </ClInclude>
+    <ClInclude Include="CAbstractFactory.h">
+      <Filter>Design\AbstractFactory</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CasinoTeamProject.cpp">
@@ -124,6 +133,9 @@
     </ClCompile>
     <ClCompile Include="CCollisionMgr.cpp">
       <Filter>Manager\CollisionMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="CAbstractFactory.cpp">
+      <Filter>Design\AbstractFactory</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
