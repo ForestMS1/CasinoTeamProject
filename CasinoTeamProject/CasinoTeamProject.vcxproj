@@ -148,10 +148,12 @@
     <ClInclude Include="CCollisionMgr.h" />
     <ClInclude Include="CKeyMgr.h" />
     <ClInclude Include="CLine.h" />
+    <ClInclude Include="CLineEditorScene.h" />
     <ClInclude Include="CLineMgr.h" />
     <ClInclude Include="CMainGame.h" />
     <ClInclude Include="CObj.h" />
     <ClInclude Include="CObjMgr.h" />
+    <ClInclude Include="CPinBallScene.h" />
     <ClInclude Include="CScene.h" />
     <ClInclude Include="CSceneMgr.h" />
     <ClInclude Include="CTestCube.h" />
@@ -168,10 +170,12 @@
     <ClCompile Include="CCollisionMgr.cpp" />
     <ClCompile Include="CKeyMgr.cpp" />
     <ClCompile Include="CLine.cpp" />
+    <ClCompile Include="CLineEditorScene.cpp" />
     <ClCompile Include="CLineMgr.cpp" />
     <ClCompile Include="CMainGame.cpp" />
     <ClCompile Include="CObj.cpp" />
     <ClCompile Include="CObjMgr.cpp" />
+    <ClCompile Include="CPinBallScene.cpp" />
     <ClCompile Include="CScene.cpp" />
     <ClCompile Include="CSceneMgr.cpp" />
     <ClCompile Include="CTestCube.cpp" />

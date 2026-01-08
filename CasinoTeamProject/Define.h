@@ -80,3 +80,13 @@ typedef struct tagLinePoint
 }LINEPOINT;
 
 extern HWND g_hWnd;
+
+
+static D3DXVECTOR3	Get_Mouse()
+{
+	POINT		ptMouse{};
+	GetCursorPos(&ptMouse);
+	ScreenToClient(g_hWnd, &ptMouse);
+
+	return { (float)ptMouse.x, (float)ptMouse.y, 0.f };
+}

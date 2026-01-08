@@ -90,6 +90,12 @@ void CLineMgr::Render(HDC hDC)
 		if ((*iter) != nullptr)
 			(*iter)->Render(hDC);
 	}
+
+	if (m_bClicked)
+	{
+		MoveToEx(hDC, m_tPoint[LEFT].fX, m_tPoint[LEFT].fY, nullptr);
+		LineTo(hDC, (int)Get_Mouse().x, (int)Get_Mouse().y);
+	}
 }
 
 void CLineMgr::Release()

@@ -5,6 +5,7 @@
 #include "CObjMgr.h"
 #include "CKeyMgr.h"
 #include "CCollisionMgr.h"
+#include "CLineEditorScene.h"
 
 CMainGame::CMainGame() : m_iFps(0), m_dwLastTime(GetTickCount())
 {
@@ -29,9 +30,12 @@ void CMainGame::Initialize()
 	CScene* pScene = new CTitleScene;
 	GETSINGLE(CSceneMgr)->CreateScene(L"Title", pScene);
 
+	pScene = new CLineEditorScene;
+	GETSINGLE(CSceneMgr)->CreateScene(L"LineEditor", pScene);
+
 
 	// 처음 보여줄 씬으로 전환
-	GETSINGLE(CSceneMgr)->ChangeScene(L"Title");
+	GETSINGLE(CSceneMgr)->ChangeScene(L"LineEditor");
 
 	GETSINGLE(CObjMgr)->Initialize();
 }
