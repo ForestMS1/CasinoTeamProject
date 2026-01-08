@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36705.20 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CasinoTeamProject", "CasinoTeamProject\CasinoTeamProject.vcxproj", "{7EB588C4-B8EB-4ED1-A6F5-5D73DCC071C0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7EB588C4-B8EB-4ED1-A6F5-5D73DCC071C0}.Debug|x64.ActiveCfg = Debug|x64
+		{7EB588C4-B8EB-4ED1-A6F5-5D73DCC071C0}.Debug|x64.Build.0 = Debug|x64
+		{7EB588C4-B8EB-4ED1-A6F5-5D73DCC071C0}.Debug|x86.ActiveCfg = Debug|Win32
+		{7EB588C4-B8EB-4ED1-A6F5-5D73DCC071C0}.Debug|x86.Build.0 = Debug|Win32
+		{7EB588C4-B8EB-4ED1-A6F5-5D73DCC071C0}.Release|x64.ActiveCfg = Release|x64
+		{7EB588C4-B8EB-4ED1-A6F5-5D73DCC071C0}.Release|x64.Build.0 = Release|x64
+		{7EB588C4-B8EB-4ED1-A6F5-5D73DCC071C0}.Release|x86.ActiveCfg = Release|Win32
+		{7EB588C4-B8EB-4ED1-A6F5-5D73DCC071C0}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1AB0A02E-2426-461E-868C-865F186559B6}
+	EndGlobalSection
+EndGlobal
