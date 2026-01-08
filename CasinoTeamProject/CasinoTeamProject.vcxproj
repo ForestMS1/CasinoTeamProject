@@ -147,6 +147,8 @@
     <ClInclude Include="CasinoTeamProject.h" />
     <ClInclude Include="CCollisionMgr.h" />
     <ClInclude Include="CKeyMgr.h" />
+    <ClInclude Include="CLine.h" />
+    <ClInclude Include="CLineMgr.h" />
     <ClInclude Include="CMainGame.h" />
     <ClInclude Include="CObj.h" />
     <ClInclude Include="CObjMgr.h" />
@@ -165,6 +167,8 @@
     <ClCompile Include="CasinoTeamProject.cpp" />
     <ClCompile Include="CCollisionMgr.cpp" />
     <ClCompile Include="CKeyMgr.cpp" />
+    <ClCompile Include="CLine.cpp" />
+    <ClCompile Include="CLineMgr.cpp" />
     <ClCompile Include="CMainGame.cpp" />
     <ClCompile Include="CObj.cpp" />
     <ClCompile Include="CObjMgr.cpp" />

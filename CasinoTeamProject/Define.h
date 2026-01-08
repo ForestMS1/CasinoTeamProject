@@ -69,5 +69,14 @@ typedef struct tagInfo
 
 }INFO;
 
+typedef struct tagLinePoint
+{
+	float		fX;
+	float		fY;
+
+	tagLinePoint() { ZeroMemory(this, sizeof(tagLinePoint)); }
+	tagLinePoint(float _fX, float _fY) : fX(_fX), fY(_fY) {}
+
+}LINEPOINT;
 
 extern HWND g_hWnd;

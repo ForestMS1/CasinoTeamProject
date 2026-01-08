@@ -34,8 +34,6 @@ void CMainGame::Initialize()
 	GETSINGLE(CSceneMgr)->ChangeScene(L"Title");
 
 	GETSINGLE(CObjMgr)->Initialize();
-
-	GETSINGLE(CObjMgr)->AddObject()
 }
 
 void CMainGame::Update()

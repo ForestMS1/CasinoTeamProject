@@ -49,6 +49,12 @@
     <Filter Include="Design\AbstractFactory">
       <UniqueIdentifier>{4af09abe-9d67-49cd-b91d-e15d83612c00}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Manager\LineMgr">
+      <UniqueIdentifier>{10294ebb-015e-4d20-936d-b96ecb1eea99}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Manager\LineMgr\Line">
+      <UniqueIdentifier>{e7f8bd72-3de2-41bf-aad5-8aefdaac1774}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -99,6 +105,12 @@
     <ClInclude Include="CAbstractFactory.h">
       <Filter>Design\AbstractFactory</Filter>
     </ClInclude>
+    <ClInclude Include="CLineMgr.h">
+      <Filter>Manager\LineMgr</Filter>
+    </ClInclude>
+    <ClInclude Include="CLine.h">
+      <Filter>Manager\LineMgr\Line</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CasinoTeamProject.cpp">
@@ -136,6 +148,12 @@
     </ClCompile>
     <ClCompile Include="CAbstractFactory.cpp">
       <Filter>Design\AbstractFactory</Filter>
+    </ClCompile>
+    <ClCompile Include="CLineMgr.cpp">
+      <Filter>Manager\LineMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="CLine.cpp">
+      <Filter>Manager\LineMgr\Line</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
