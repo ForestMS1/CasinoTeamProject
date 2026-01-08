@@ -6,6 +6,7 @@
 #include "CKeyMgr.h"
 #include "CCollisionMgr.h"
 #include "CLineEditorScene.h"
+#include "CLineMgr.h"
 
 CMainGame::CMainGame() : m_iFps(0), m_dwLastTime(GetTickCount())
 {
@@ -95,7 +96,7 @@ void CMainGame::Release()
 	CSceneMgr::Destroy_Instance();
 	CObjMgr::Destroy_Instance();
 	CKeyMgr::Destroy_Instance();
-
+	CLineMgr::Destroy_Instance();
 
 	ReleaseDC(g_hWnd, m_hDC);
 	ReleaseDC(g_hWnd, m_hBackDC);

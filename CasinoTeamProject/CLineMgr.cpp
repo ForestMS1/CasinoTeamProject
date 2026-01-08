@@ -63,7 +63,10 @@ void CLineMgr::Update()
 	if (GetAsyncKeyState(VK_BACK))
 	{
 		if (!m_LineList.empty())
+		{
+			Safe_Delete(m_LineList.back());
 			m_LineList.pop_back();
+		}
 	}
 
 
