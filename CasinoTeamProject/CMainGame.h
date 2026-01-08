@@ -12,5 +12,12 @@ public:
 	void Render();
 	void Release();
 private:
+	HDC			m_hDC;
+	HDC			m_hBackDC;
+	HBITMAP		m_hBitMap;
+
+	int			m_iFps;
+	DWORD		m_dwLastTime;
+	TCHAR		m_szFPS[256];
 };
 
