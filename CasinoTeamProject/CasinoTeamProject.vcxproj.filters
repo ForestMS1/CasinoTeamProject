@@ -28,6 +28,21 @@
     <Filter Include="Scene\TitleScene">
       <UniqueIdentifier>{e489b6b0-e33c-4f3c-a140-a2236443472a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Object">
+      <UniqueIdentifier>{24d0b085-8522-41a3-803e-d23a95163792}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Manager\ObjMgr">
+      <UniqueIdentifier>{91eb2875-97cc-4139-afa4-cae2db4a29c4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\TestObj">
+      <UniqueIdentifier>{d06d97ca-0bc9-44fa-80ec-4891ee8a0057}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Manager\KeyMgr">
+      <UniqueIdentifier>{df163af5-fc9c-478c-a193-8507f322f7bc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Manager\CollisionMgr">
+      <UniqueIdentifier>{3e5640c9-764c-4970-8410-3982d0df4f54}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -60,6 +75,21 @@
     <ClInclude Include="CTitleScene.h">
       <Filter>Scene\TitleScene</Filter>
     </ClInclude>
+    <ClInclude Include="CObj.h">
+      <Filter>Object</Filter>
+    </ClInclude>
+    <ClInclude Include="CObjMgr.h">
+      <Filter>Manager\ObjMgr</Filter>
+    </ClInclude>
+    <ClInclude Include="CTestCube.h">
+      <Filter>Object\TestObj</Filter>
+    </ClInclude>
+    <ClInclude Include="CKeyMgr.h">
+      <Filter>Manager\KeyMgr</Filter>
+    </ClInclude>
+    <ClInclude Include="CCollisionMgr.h">
+      <Filter>Manager\CollisionMgr</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CasinoTeamProject.cpp">
@@ -79,6 +109,21 @@
     </ClCompile>
     <ClCompile Include="CTitleScene.cpp">
       <Filter>Scene\TitleScene</Filter>
+    </ClCompile>
+    <ClCompile Include="CObj.cpp">
+      <Filter>Object</Filter>
+    </ClCompile>
+    <ClCompile Include="CObjMgr.cpp">
+      <Filter>Manager\ObjMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="CTestCube.cpp">
+      <Filter>Object\TestObj</Filter>
+    </ClCompile>
+    <ClCompile Include="CKeyMgr.cpp">
+      <Filter>Manager\KeyMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="CCollisionMgr.cpp">
+      <Filter>Manager\CollisionMgr</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

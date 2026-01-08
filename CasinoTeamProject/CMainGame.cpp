@@ -2,6 +2,9 @@
 #include "CMainGame.h"
 #include "CTitleScene.h"
 #include "CSceneMgr.h"
+#include "CObjMgr.h"
+#include "CKeyMgr.h"
+#include "CCollisionMgr.h"
 
 CMainGame::CMainGame() : m_iFps(0), m_dwLastTime(GetTickCount())
 {
@@ -27,20 +30,30 @@ void CMainGame::Initialize()
 	GETSINGLE(CSceneMgr)->CreateScene(L"Title", pScene);
 
 
-
-
 	// 처음 보여줄 씬으로 전환
 	GETSINGLE(CSceneMgr)->ChangeScene(L"Title");
+
+	GETSINGLE(CObjMgr)->Initialize();
 }
 
 void CMainGame::Update()
 {
 	GETSINGLE(CSceneMgr)->Update();
+	GETSINGLE(CObjMgr)->Update();
 }
 
 void CMainGame::Late_Update()
 {
 	GETSINGLE(CSceneMgr)->Late_Update();
+	GETSINGLE(CKeyMgr)->Late_Update();
+	GETSINGLE(CObjMgr)->Late_Update();
+
+	// 충돌 처리 예시 (아래처럼 추가하면 됩니다.)
+	//if (!GETSINGLE(CObjMgr)->GetObjLayer(OBJ_PLAYER).empty())
+	//{
+	//	CCollisionMgr::Collision_RectEx(GETSINGLE(CObjMgr)->GetObjLayer(OBJ_PLAYER), GETSINGLE(CObjMgr)->GetObjLayer(OBJ_ITEM));
+	//	TODO : 충돌처리 추가
+	//}
 }
 
 void CMainGame::Render()
@@ -59,6 +72,7 @@ void CMainGame::Render()
 	}
 
 	GETSINGLE(CSceneMgr)->Render(m_hBackDC);
+	GETSINGLE(CObjMgr)->Render(m_hBackDC);
 
 	BitBlt(m_hDC,				// 복사 받을 DC
 		0,						// 복사 받을 공간의 LEFT	
@@ -75,6 +89,9 @@ void CMainGame::Release()
 {
 	// 매니저들 삭제
 	CSceneMgr::Destroy_Instance();
+	CObjMgr::Destroy_Instance();
+	CKeyMgr::Destroy_Instance();
+
 
 	ReleaseDC(g_hWnd, m_hDC);
 	ReleaseDC(g_hWnd, m_hBackDC);

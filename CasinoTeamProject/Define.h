@@ -35,6 +35,11 @@ public:										\
 #pragma endregion
 #define GETSINGLE(T) T::Get_Instance()
 #define PURE = 0
+#define	OBJ_NOEVENT 0
+#define	OBJ_DEAD    1
+#define VK_MAX		0xff
+enum OBJ_LAYER { OBJ_PLAYER, OBJ_EFFECT, OBJ_ITEM, OBJ_END };
+enum RENDERID { BACK, GAMEOBJECT, BULLET, PLAYER, EFFECT, UI, RENDER_END };
 #pragma region SafeDelete
 template<typename T>
 void Safe_Delete(T& p)
@@ -54,6 +59,11 @@ typedef struct tagInfo
 
 	D3DXVECTOR3		vLook;
 	D3DXVECTOR3		vNormal;	// ¹ý¼± º¤ÅÍ
+
+	// °´Ã¼ÀÇ Å©±â
+	float			fCX;
+	float			fCY;
+	float			fCZ;
 
 	D3DXMATRIX		matWorld;
 

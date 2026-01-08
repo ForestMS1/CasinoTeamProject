@@ -1,4 +1,5 @@
 #pragma once
+#include "CObjMgr.h"
 class CScene
 {
 public:
