@@ -1,5 +1,6 @@
 #include "pch.h"
 #include "CLineMgr.h"
+#include "CSceneMgr.h"
 
 CLineMgr* CLineMgr::m_pInstance = nullptr;
 
@@ -23,6 +24,16 @@ void CLineMgr::Initialize()
 
 void CLineMgr::Update()
 {
+	for (auto iter = m_LineList.begin(); iter != m_LineList.end(); ++iter)
+	{
+		if ((*iter) != nullptr)
+			(*iter)->Update();
+	}
+
+
+	if (GETSINGLE(CSceneMgr)->GetCurScene() != GETSINGLE(CSceneMgr)->FindScene(L"LineEditor"))
+		return;
+
 	POINT		ptMouse{};
 	GetCursorPos(&ptMouse);
 	ScreenToClient(g_hWnd, &ptMouse);
@@ -67,11 +78,6 @@ void CLineMgr::Update()
 		Load_Line();
 		return;
 	}
-	for (auto iter = m_LineList.begin(); iter != m_LineList.end(); ++iter)
-	{
-		if ((*iter) != nullptr)
-			(*iter)->Update();
-	}
 }
 
 void CLineMgr::Late_Update()
@@ -91,7 +97,7 @@ void CLineMgr::Render(HDC hDC)
 			(*iter)->Render(hDC);
 	}
 
-	if (m_bClicked)
+	if (m_bClicked && GETSINGLE(CSceneMgr)->GetCurScene() == GETSINGLE(CSceneMgr)->FindScene(L"LineEditor"))
 	{
 		MoveToEx(hDC, m_tPoint[LEFT].fX, m_tPoint[LEFT].fY, nullptr);
 		LineTo(hDC, (int)Get_Mouse().x, (int)Get_Mouse().y);
