@@ -47,4 +47,17 @@ void Safe_Delete(T& p)
 }
 #pragma endregion
 
+typedef struct tagInfo
+{
+	D3DXVECTOR3		vPos;		// À§Ä¡ º¤ÅÍ
+	D3DXVECTOR3		vDir;		// ¹æÇâ º¤ÅÍ
+
+	D3DXVECTOR3		vLook;
+	D3DXVECTOR3		vNormal;	// ¹ý¼± º¤ÅÍ
+
+	D3DXMATRIX		matWorld;
+
+}INFO;
+
+
 extern HWND g_hWnd;

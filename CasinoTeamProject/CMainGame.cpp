@@ -73,6 +73,9 @@ void CMainGame::Render()
 
 void CMainGame::Release()
 {
+	// 매니저들 삭제
+	CSceneMgr::Destroy_Instance();
+
 	ReleaseDC(g_hWnd, m_hDC);
 	ReleaseDC(g_hWnd, m_hBackDC);
 }
