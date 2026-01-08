@@ -19,7 +19,7 @@ public:										\
 	{										\
 		if (m_pInstance == nullptr)			\
 		{									\
-			m_pInstance = new CSceneMgr;	\
+			m_pInstance = new T;			\
 		}									\
 		return m_pInstance;					\
 	}										\
