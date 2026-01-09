@@ -7,8 +7,23 @@ CObj::CObj() :
 	m_eRender(RENDER_END)
 	
 {
+	ZeroMemory(&m_tInfo, sizeof(m_tInfo));
+	D3DXMatrixIdentity(&m_tInfo.matWorld);
 }
 
 CObj::~CObj()
 {
+}
+
+void CObj::Draw_Vertex(HDC hDC)
+{
+	if (m_vVertexes.empty())
+		return;
+
+	MoveToEx(hDC, m_vVertexes[0].x, m_vVertexes[0].y, nullptr);
+	for (auto& vertex : m_vVertexes)
+	{
+		LineTo(hDC, vertex.x, vertex.y);
+	}
+	LineTo(hDC, m_vVertexes[0].x, m_vVertexes[0].y);
 }

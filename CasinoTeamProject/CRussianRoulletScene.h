@@ -1,11 +1,11 @@
 #pragma once
 #include "CScene.h"
-class CLineEditorScene :
+class CRussianRoulletScene :
     public CScene
 {
 public:
-    CLineEditorScene();
-    ~CLineEditorScene();
+    CRussianRoulletScene();
+    ~CRussianRoulletScene();
 public:
     // CScene을(를) 통해 상속됨
     void Initialize() override;

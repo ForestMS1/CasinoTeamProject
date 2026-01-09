@@ -34,10 +34,13 @@ public:										\
 	}										
 #pragma endregion
 #define GETSINGLE(T) T::Get_Instance()
-#define PURE = 0
-#define	OBJ_NOEVENT 0
-#define	OBJ_DEAD    1
-#define VK_MAX		0xff
+#define PURE			= 0
+#define	OBJ_NOEVENT		0
+#define	OBJ_DEAD		1
+#define VK_MAX			0xff
+#define PI				3.14159265358979
+//#define TO_RADIAN(D)	D * 180.f/PI
+//#define TO_DEGREE(R)	R * PI/180.f
 enum OBJ_LAYER { OBJ_PLAYER, OBJ_EFFECT, OBJ_ITEM, OBJ_END };
 enum RENDERID { BACK, GAMEOBJECT, BULLET, PLAYER, EFFECT, UI, RENDER_END };
 #pragma region SafeDelete
@@ -61,9 +64,10 @@ typedef struct tagInfo
 	D3DXVECTOR3		vNormal;	// ¹ý¼± º¤ÅÍ
 
 	// °´Ã¼ÀÇ Å©±â
-	float			fCX;
-	float			fCY;
-	float			fCZ;
+	D3DXVECTOR3		vScale;
+	//float			fCX;
+	//float			fCY;
+	//float			fCZ;
 
 	D3DXMATRIX		matWorld;
 
