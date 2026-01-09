@@ -19,8 +19,10 @@ private:
     void Shot();
 private:
     D3DXVECTOR3 m_vecMuzzle;
-    float m_fAngle;
-    int m_iBullet;
+    float   m_fAngle;
+    int     m_iProbability;
+    bool    m_bIsRight;
+    bool    m_bIsShotInit;
 
     D3DXMATRIX m_matRotate; // 총알과 공유 할 회전 행렬
 };

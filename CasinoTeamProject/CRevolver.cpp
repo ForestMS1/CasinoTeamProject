@@ -3,10 +3,13 @@
 #include "CObjMgr.h"
 #include "CBullet.h"
 #include "CKeyMgr.h"
+#include "CShotEventObserver.h"
 
 CRevolver::CRevolver() : 
-    m_iBullet(0),
-    m_fAngle(0)
+    m_iProbability(0),
+    m_fAngle(2.f),
+    m_bIsRight(true),
+    m_bIsShotInit(false)
 {
 	m_eRender = GAMEOBJECT;
     D3DXMatrixIdentity(&m_matRotate);
@@ -53,19 +56,26 @@ void CRevolver::Initialize()
 #pragma endregion
 
     m_vecMuzzle = { m_tInfo.vPos.x + fHalfX, m_tInfo.vPos.y - 20.f, 0.f };
+
+    srand(time(NULL));
 }
 
 int CRevolver::Update()
 {
     if (GETSINGLE(CKeyMgr)->Key_Down('C'))
     {
+        m_iProbability = (rand() % 6) + 1; // 1~6
+        m_bIsShotInit = true;
         Shot();
+        m_bIsRight = !m_bIsRight;
     }
 	return 0;
 }
 
 void CRevolver::Late_Update()
 {
+    if (m_bIsShotInit == false)
+        return; // 처음 회전 방지
     Rotate_Muzzle();
 }
 
@@ -81,8 +91,13 @@ void CRevolver::Release()
 
 void CRevolver::Rotate_Muzzle()
 {
-    //if (m_fAngle > 180.f)
-        //return;
+    if (m_fAngle > 180.f && m_bIsRight == true)
+        return;
+    if (m_fAngle < 0.f && m_bIsRight == false)
+        return;
+    if (m_iProbability == 6)
+        return;
+
     D3DXMATRIX matGoOriginTrans, matGoPrev;
     D3DXMatrixIdentity(&m_matRotate);
     D3DXMatrixIdentity(&matGoOriginTrans);
@@ -92,8 +107,16 @@ void CRevolver::Rotate_Muzzle()
     // 원점으로 이동하는 행렬
     D3DXMatrixTranslation(&matGoOriginTrans, -m_tInfo.vPos.x, -m_tInfo.vPos.y, -m_tInfo.vPos.z);
     // 회전행렬
-    m_fAngle += 1.f;
-    D3DXMatrixRotationY(&m_matRotate, D3DXToRadian(1));
+    if (m_bIsRight)
+    {
+        m_fAngle += 1.f;
+        D3DXMatrixRotationY(&m_matRotate, D3DXToRadian(1));
+    }
+    else
+    {
+        m_fAngle -= 1.f;
+        D3DXMatrixRotationY(&m_matRotate, D3DXToRadian(-1));
+    }
     // 제자리로 이동하는 행렬
     D3DXMatrixTranslation(&matGoPrev, m_tInfo.vPos.x, m_tInfo.vPos.y, m_tInfo.vPos.z);
 
@@ -114,11 +137,21 @@ void CRevolver::Rotate_Muzzle()
 
 void CRevolver::Shot()
 {
-    CBullet* pBullet = new CBullet;
-    pBullet->Set_Dir(m_tInfo.vDir);
-    pBullet->Set_Pos(m_vecMuzzle);
-    D3DXMatrixRotationY(&m_matRotate, D3DXToRadian(m_fAngle));
-    pBullet->Set_MatRotate(m_matRotate);
-    pBullet->Initialize();
-    GETSINGLE(CObjMgr)->AddObject(OBJ_ITEM, pBullet);
+    // 리볼버 돌리고 다시
+    if (m_iProbability != 6)
+    {
+        GETSINGLE(CShotEventObserver)->Set_Shot(true);
+        return;
+    }
+    // 실제 총알 발사
+    else
+    {
+        CBullet* pBullet = new CBullet;
+        pBullet->Set_Dir(m_tInfo.vDir);
+        pBullet->Set_Pos(m_vecMuzzle);
+        D3DXMatrixRotationY(&m_matRotate, D3DXToRadian(m_fAngle));
+        pBullet->Set_MatRotate(m_matRotate);
+        pBullet->Initialize();
+        GETSINGLE(CObjMgr)->AddObject(OBJ_ITEM, pBullet);
+    }
 }

@@ -64,6 +64,15 @@
     <Filter Include="Object\Revolver\Bullet">
       <UniqueIdentifier>{568050d0-2218-46be-95dc-7f1272981db3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Object\Revolver\RRPlayer">
+      <UniqueIdentifier>{5f8d2862-3307-4051-b7b2-242292bf21f2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\Revolver\Magazine">
+      <UniqueIdentifier>{361c4a67-3994-4063-b925-b1f7fefebc35}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\Revolver\ShotEventObserver">
+      <UniqueIdentifier>{e0f0c301-e512-42f1-bee6-5db10451dc10}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -129,6 +138,15 @@
     <ClInclude Include="CBullet.h">
       <Filter>Object\Revolver\Bullet</Filter>
     </ClInclude>
+    <ClInclude Include="CRRPlayer.h">
+      <Filter>Object\Revolver\RRPlayer</Filter>
+    </ClInclude>
+    <ClInclude Include="CMagazine.h">
+      <Filter>Object\Revolver\Magazine</Filter>
+    </ClInclude>
+    <ClInclude Include="CShotEventObserver.h">
+      <Filter>Object\Revolver\ShotEventObserver</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CasinoTeamProject.cpp">
@@ -181,6 +199,15 @@
     </ClCompile>
     <ClCompile Include="CBullet.cpp">
       <Filter>Object\Revolver\Bullet</Filter>
+    </ClCompile>
+    <ClCompile Include="CRRPlayer.cpp">
+      <Filter>Object\Revolver\RRPlayer</Filter>
+    </ClCompile>
+    <ClCompile Include="CMagazine.cpp">
+      <Filter>Object\Revolver\Magazine</Filter>
+    </ClCompile>
+    <ClCompile Include="CShotEventObserver.cpp">
+      <Filter>Object\Revolver\ShotEventObserver</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

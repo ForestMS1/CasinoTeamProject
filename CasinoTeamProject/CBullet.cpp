@@ -67,7 +67,7 @@ int CBullet::Update()
     {
         D3DXVec3TransformCoord(&vertex, &vertex, &m_tInfo.matWorld);
     }
-
+    D3DXVec3TransformCoord(&m_tInfo.vPos, &m_tInfo.vPos, &m_tInfo.matWorld);
 	return 0;
 }
 

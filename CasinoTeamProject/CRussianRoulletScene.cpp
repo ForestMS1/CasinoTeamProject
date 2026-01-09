@@ -2,6 +2,9 @@
 #include "CRussianRoulletScene.h"
 #include "CRevolver.h"
 #include "CBullet.h"
+#include "CRRPlayer.h"
+#include "CMagazine.h"
+#include "CShotEventObserver.h"
 
 CRussianRoulletScene::CRussianRoulletScene()
 {
@@ -14,12 +17,19 @@ CRussianRoulletScene::~CRussianRoulletScene()
 
 void CRussianRoulletScene::Initialize()
 {
-	GETSINGLE(CObjMgr)->AddObject(OBJ_ITEM, new CRevolver);
-	//GETSINGLE(CObjMgr)->AddObject(OBJ_ITEM, new CBullet);
+	CObj* pRevolver = new CRevolver;
+	CObj* pMagazine = new CMagazine;
+	GETSINGLE(CObjMgr)->AddObject(OBJ_ITEM, pRevolver);
+	GETSINGLE(CObjMgr)->AddObject(OBJ_ITEM, pMagazine);
+	GETSINGLE(CShotEventObserver)->Initialize(pRevolver, pMagazine);
+
+
+	GETSINGLE(CObjMgr)->AddObject(OBJ_ITEM, new CRRPlayer);
 }
 
 int CRussianRoulletScene::Update()
 {
+	GETSINGLE(CShotEventObserver)->Update();
 	return 0;
 }
 
@@ -33,4 +43,5 @@ void CRussianRoulletScene::Render(HDC hDC)
 
 void CRussianRoulletScene::Release()
 {
+	CShotEventObserver::Destroy_Instance();
 }
