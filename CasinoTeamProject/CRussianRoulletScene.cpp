@@ -5,6 +5,7 @@
 #include "CRRPlayer.h"
 #include "CMagazine.h"
 #include "CShotEventObserver.h"
+#include "CCollisionMgr.h"
 
 CRussianRoulletScene::CRussianRoulletScene()
 {
@@ -23,8 +24,12 @@ void CRussianRoulletScene::Initialize()
 	GETSINGLE(CObjMgr)->AddObject(OBJ_ITEM, pMagazine);
 	GETSINGLE(CShotEventObserver)->Initialize(pRevolver, pMagazine);
 
-
-	GETSINGLE(CObjMgr)->AddObject(OBJ_ITEM, new CRRPlayer);
+	CObj* pPlayer1 = new CRRPlayer;
+	pPlayer1->Set_Pos(D3DXVECTOR3((WINCX >> 1) + 300.f, WINCY >> 1, 0.f));
+	GETSINGLE(CObjMgr)->AddObject(OBJ_PLAYER, pPlayer1);
+	CObj* pPlayer2 = new CRRPlayer;
+	pPlayer2->Set_Pos(D3DXVECTOR3((WINCX >> 1) - 300.f, WINCY >> 1, 0.f));
+	GETSINGLE(CObjMgr)->AddObject(OBJ_PLAYER, pPlayer2);
 }
 
 int CRussianRoulletScene::Update()
@@ -35,6 +40,9 @@ int CRussianRoulletScene::Update()
 
 void CRussianRoulletScene::Late_Update()
 {
+	//	총알과 사람 충돌처리
+	CCollisionMgr::Collision_Rect(GETSINGLE(CObjMgr)->GetObjLayer(OBJ_PLAYER), GETSINGLE(CObjMgr)->GetObjLayer(OBJ_ITEM));
+
 }
 
 void CRussianRoulletScene::Render(HDC hDC)

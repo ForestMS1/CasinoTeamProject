@@ -1,6 +1,5 @@
 #include "pch.h"
 #include "CBullet.h"
-
 CBullet::CBullet()
 {
     m_eRender = GAMEOBJECT;
@@ -60,6 +59,9 @@ void CBullet::Initialize()
 
 int CBullet::Update()
 {
+    if (m_bIsDead)
+        return OBJ_DEAD;
+
     D3DXMATRIX matTrans;
     D3DXMatrixTranslation(&matTrans, m_tInfo.vDir.x * m_fSpeed, m_tInfo.vDir.y * m_fSpeed, m_tInfo.vDir.z * m_fSpeed);
     m_tInfo.matWorld = matTrans;

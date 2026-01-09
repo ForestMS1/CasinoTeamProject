@@ -92,3 +92,23 @@ void CCollisionMgr::Collision_Circle(list<CObj*> _Dst, list<CObj*> _Src)
 		}
 	}
 }
+
+void CCollisionMgr::Collision_Rect(list<CObj*> _Dst, list<CObj*> _Src)
+{
+	float	fWidth(0.f), fHeight(0.f);
+
+	for (auto& Dst : _Dst)
+	{
+		for (auto& Src : _Src)
+		{
+			if (Check_Rect(Dst, Src, &fWidth, &fHeight))
+			{
+				Dst->Set_Dead();
+				Src->Set_Dead();
+			}
+		}
+	}
+}
+
+
+
