@@ -2,6 +2,7 @@
 #include "CMainGame.h"
 #include "CTitleScene.h"
 #include "CRussianRoulletScene.h"
+#include "CCardPairScene.h"
 #include "CSceneMgr.h"
 #include "CObjMgr.h"
 #include "CKeyMgr.h"
@@ -34,9 +35,12 @@ void CMainGame::Initialize()
 	pScene = new CRussianRoulletScene;
 	GETSINGLE(CSceneMgr)->CreateScene(L"RussianRoullet", pScene);
 
+	pScene = new CCardPairScene;
+	GETSINGLE(CSceneMgr)->CreateScene(L"CardPairScene", pScene);
+
 
 	// 처음 보여줄 씬으로 전환
-	GETSINGLE(CSceneMgr)->ChangeScene(L"RussianRoullet");
+	GETSINGLE(CSceneMgr)->ChangeScene(L"CardPairScene");
 
 	GETSINGLE(CObjMgr)->Initialize();
 }

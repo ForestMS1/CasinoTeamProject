@@ -1,5 +1,6 @@
 #pragma once
 #include "CObjMgr.h"
+#include "CAbstractFactory.h"
 class CScene
 {
 public:

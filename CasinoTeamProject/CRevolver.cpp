@@ -9,7 +9,8 @@ CRevolver::CRevolver() :
     m_iProbability(0),
     m_fAngle(2.f),
     m_bIsRight(true),
-    m_bIsShotInit(false)
+    m_bIsShotInit(false),
+    m_iShotCount(0)
 {
 	m_eRender = GAMEOBJECT;
     D3DXMatrixIdentity(&m_matRotate);
@@ -64,7 +65,10 @@ int CRevolver::Update()
 {
     if (GETSINGLE(CKeyMgr)->Key_Down('C'))
     {
-        m_iProbability = (rand() % 6) + 1; // 1~6
+        m_iProbability = (rand() % (6 - m_iShotCount)) + 1; // 1~6
+        m_iShotCount++;
+        if (m_iShotCount >= 5)
+            m_iShotCount = 5;
         m_bIsShotInit = true;
         Shot();
         m_bIsRight = !m_bIsRight;
@@ -95,7 +99,7 @@ void CRevolver::Rotate_Muzzle()
         return;
     if (m_fAngle < 0.f && m_bIsRight == false)
         return;
-    if (m_iProbability == 6)
+    if (m_iProbability == 1)
         return;
 
     D3DXMATRIX matGoOriginTrans, matGoPrev;
@@ -138,7 +142,7 @@ void CRevolver::Rotate_Muzzle()
 void CRevolver::Shot()
 {
     // 리볼버 돌리고 다시
-    if (m_iProbability != 6)
+    if (m_iProbability != 1)
     {
         GETSINGLE(CShotEventObserver)->Set_Shot(true);
         return;

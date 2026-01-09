@@ -146,6 +146,9 @@
     <ClInclude Include="CAbstractFactory.h" />
     <ClInclude Include="CasinoTeamProject.h" />
     <ClInclude Include="CBullet.h" />
+    <ClInclude Include="CCard.h" />
+    <ClInclude Include="CCardMgr.h" />
+    <ClInclude Include="CCardPairScene.h" />
     <ClInclude Include="CCollisionMgr.h" />
     <ClInclude Include="CKeyMgr.h" />
     <ClInclude Include="CLine.h" />
@@ -172,6 +175,9 @@
     <ClCompile Include="CAbstractFactory.cpp" />
     <ClCompile Include="CasinoTeamProject.cpp" />
     <ClCompile Include="CBullet.cpp" />
+    <ClCompile Include="CCard.cpp" />
+    <ClCompile Include="CCardMgr.cpp" />
+    <ClCompile Include="CCardPairScene.cpp" />
     <ClCompile Include="CCollisionMgr.cpp" />
     <ClCompile Include="CKeyMgr.cpp" />
     <ClCompile Include="CLine.cpp" />
