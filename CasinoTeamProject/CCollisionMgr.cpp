@@ -52,8 +52,8 @@ bool CCollisionMgr::Check_Rect(CObj* pDst, CObj* pSrc, float* pX, float* pY)
 	float		fWidth = fabsf(pDst->Get_Info().vPos.x - pSrc->Get_Info().vPos.x);
 	float		fHeight = fabsf(pDst->Get_Info().vPos.y - pSrc->Get_Info().vPos.y);
 
-	float		fRadiusX = (pDst->Get_Info().fCX + pSrc->Get_Info().fCX) * 0.5f;
-	float		fRadiusY = (pDst->Get_Info().fCY + pSrc->Get_Info().fCY) * 0.5f;
+	float		fRadiusX = (pDst->Get_Info().vScale.x + pSrc->Get_Info().vScale.x) * 0.5f;
+	float		fRadiusY = (pDst->Get_Info().vScale.y + pSrc->Get_Info().vScale.y) * 0.5f;
 
 	if (fRadiusX >= fWidth && fRadiusY >= fHeight)
 	{
@@ -68,7 +68,7 @@ bool CCollisionMgr::Check_Rect(CObj* pDst, CObj* pSrc, float* pX, float* pY)
 
 bool CCollisionMgr::Check_Circle(CObj* pDst, CObj* pSrc)
 {
-	float	fRadius = (pDst->Get_Info().fCX + pSrc->Get_Info().fCX) * 0.5f;
+	float	fRadius = (pDst->Get_Info().vScale.x + pSrc->Get_Info().vScale.x) * 0.5f;
 
 	float	fWidth = fabsf(pDst->Get_Info().vPos.x - pSrc->Get_Info().vPos.x);
 	float	fHeight = fabsf(pDst->Get_Info().vPos.y - pSrc->Get_Info().vPos.y);
@@ -92,3 +92,23 @@ void CCollisionMgr::Collision_Circle(list<CObj*> _Dst, list<CObj*> _Src)
 		}
 	}
 }
+
+void CCollisionMgr::Collision_Rect(list<CObj*> _Dst, list<CObj*> _Src)
+{
+	float	fWidth(0.f), fHeight(0.f);
+
+	for (auto& Dst : _Dst)
+	{
+		for (auto& Src : _Src)
+		{
+			if (Check_Rect(Dst, Src, &fWidth, &fHeight))
+			{
+				Dst->Set_Dead();
+				Src->Set_Dead();
+			}
+		}
+	}
+}
+
+
+

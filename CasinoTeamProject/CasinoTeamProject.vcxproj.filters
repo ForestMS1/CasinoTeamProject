@@ -49,6 +49,30 @@
     <Filter Include="Design\AbstractFactory">
       <UniqueIdentifier>{4af09abe-9d67-49cd-b91d-e15d83612c00}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Manager\LineMgr">
+      <UniqueIdentifier>{10294ebb-015e-4d20-936d-b96ecb1eea99}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Manager\LineMgr\Line">
+      <UniqueIdentifier>{e7f8bd72-3de2-41bf-aad5-8aefdaac1774}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\RussianRoulletScene">
+      <UniqueIdentifier>{d586a99c-7d05-4bfd-8f4b-c6f9280b72c0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\Revolver">
+      <UniqueIdentifier>{77c8bd0b-2940-4f08-849c-06f35ed44fdc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\Revolver\Bullet">
+      <UniqueIdentifier>{568050d0-2218-46be-95dc-7f1272981db3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\Revolver\RRPlayer">
+      <UniqueIdentifier>{5f8d2862-3307-4051-b7b2-242292bf21f2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\Revolver\Magazine">
+      <UniqueIdentifier>{361c4a67-3994-4063-b925-b1f7fefebc35}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\Revolver\ShotEventObserver">
+      <UniqueIdentifier>{e0f0c301-e512-42f1-bee6-5db10451dc10}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -99,6 +123,30 @@
     <ClInclude Include="CAbstractFactory.h">
       <Filter>Design\AbstractFactory</Filter>
     </ClInclude>
+    <ClInclude Include="CLineMgr.h">
+      <Filter>Manager\LineMgr</Filter>
+    </ClInclude>
+    <ClInclude Include="CLine.h">
+      <Filter>Manager\LineMgr\Line</Filter>
+    </ClInclude>
+    <ClInclude Include="CRussianRoulletScene.h">
+      <Filter>Scene\RussianRoulletScene</Filter>
+    </ClInclude>
+    <ClInclude Include="CRevolver.h">
+      <Filter>Object\Revolver</Filter>
+    </ClInclude>
+    <ClInclude Include="CBullet.h">
+      <Filter>Object\Revolver\Bullet</Filter>
+    </ClInclude>
+    <ClInclude Include="CRRPlayer.h">
+      <Filter>Object\Revolver\RRPlayer</Filter>
+    </ClInclude>
+    <ClInclude Include="CMagazine.h">
+      <Filter>Object\Revolver\Magazine</Filter>
+    </ClInclude>
+    <ClInclude Include="CShotEventObserver.h">
+      <Filter>Object\Revolver\ShotEventObserver</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CasinoTeamProject.cpp">
@@ -136,6 +184,30 @@
     </ClCompile>
     <ClCompile Include="CAbstractFactory.cpp">
       <Filter>Design\AbstractFactory</Filter>
+    </ClCompile>
+    <ClCompile Include="CLineMgr.cpp">
+      <Filter>Manager\LineMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="CLine.cpp">
+      <Filter>Manager\LineMgr\Line</Filter>
+    </ClCompile>
+    <ClCompile Include="CRussianRoulletScene.cpp">
+      <Filter>Scene\RussianRoulletScene</Filter>
+    </ClCompile>
+    <ClCompile Include="CRevolver.cpp">
+      <Filter>Object\Revolver</Filter>
+    </ClCompile>
+    <ClCompile Include="CBullet.cpp">
+      <Filter>Object\Revolver\Bullet</Filter>
+    </ClCompile>
+    <ClCompile Include="CRRPlayer.cpp">
+      <Filter>Object\Revolver\RRPlayer</Filter>
+    </ClCompile>
+    <ClCompile Include="CMagazine.cpp">
+      <Filter>Object\Revolver\Magazine</Filter>
+    </ClCompile>
+    <ClCompile Include="CShotEventObserver.cpp">
+      <Filter>Object\Revolver\ShotEventObserver</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

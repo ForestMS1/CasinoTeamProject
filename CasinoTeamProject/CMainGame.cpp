@@ -1,10 +1,12 @@
 #include "pch.h"
 #include "CMainGame.h"
 #include "CTitleScene.h"
+#include "CRussianRoulletScene.h"
 #include "CSceneMgr.h"
 #include "CObjMgr.h"
 #include "CKeyMgr.h"
 #include "CCollisionMgr.h"
+#include "CLineMgr.h"
 
 CMainGame::CMainGame() : m_iFps(0), m_dwLastTime(GetTickCount())
 {
@@ -29,13 +31,14 @@ void CMainGame::Initialize()
 	CScene* pScene = new CTitleScene;
 	GETSINGLE(CSceneMgr)->CreateScene(L"Title", pScene);
 
+	pScene = new CRussianRoulletScene;
+	GETSINGLE(CSceneMgr)->CreateScene(L"RussianRoullet", pScene);
+
 
 	// 처음 보여줄 씬으로 전환
-	GETSINGLE(CSceneMgr)->ChangeScene(L"Title");
+	GETSINGLE(CSceneMgr)->ChangeScene(L"RussianRoullet");
 
 	GETSINGLE(CObjMgr)->Initialize();
-
-	GETSINGLE(CObjMgr)->AddObject()
 }
 
 void CMainGame::Update()
@@ -93,7 +96,7 @@ void CMainGame::Release()
 	CSceneMgr::Destroy_Instance();
 	CObjMgr::Destroy_Instance();
 	CKeyMgr::Destroy_Instance();
-
+	CLineMgr::Destroy_Instance();
 
 	ReleaseDC(g_hWnd, m_hDC);
 	ReleaseDC(g_hWnd, m_hBackDC);
