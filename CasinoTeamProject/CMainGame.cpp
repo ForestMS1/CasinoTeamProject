@@ -5,6 +5,7 @@
 #include "CObjMgr.h"
 #include "CKeyMgr.h"
 #include "CCollisionMgr.h"
+#include "CCointoss.h"
 
 CMainGame::CMainGame() : m_iFps(0), m_dwLastTime(GetTickCount())
 {
@@ -28,11 +29,11 @@ void CMainGame::Initialize()
 	// 씬매니저에 씬 등록
 	CScene* pScene = new CTitleScene;
 	GETSINGLE(CSceneMgr)->CreateScene(L"Title", pScene);
-
+	CScene* pScene2 = new CCointoss;
+	GETSINGLE(CSceneMgr)->CreateScene(L"Coin", pScene2);
 
 	// 처음 보여줄 씬으로 전환
-	GETSINGLE(CSceneMgr)->ChangeScene(L"Title");
-
+	GETSINGLE(CSceneMgr)->ChangeScene(L"Coin");
 	GETSINGLE(CObjMgr)->Initialize();
 }
 

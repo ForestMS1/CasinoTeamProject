@@ -43,6 +43,12 @@
     <Filter Include="Manager\CollisionMgr">
       <UniqueIdentifier>{3e5640c9-764c-4970-8410-3982d0df4f54}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Scene\CointossScene">
+      <UniqueIdentifier>{cfe0ba60-b945-4ba1-a952-1c0d8c1a74e8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\HoYoungObject">
+      <UniqueIdentifier>{aa7f7591-3da4-4081-9d2b-59f423aab685}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -90,6 +96,12 @@
     <ClInclude Include="CCollisionMgr.h">
       <Filter>Manager\CollisionMgr</Filter>
     </ClInclude>
+    <ClInclude Include="CCointoss.h">
+      <Filter>Scene\CointossScene</Filter>
+    </ClInclude>
+    <ClInclude Include="CCoin.h">
+      <Filter>Object\HoYoungObject</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CasinoTeamProject.cpp">
@@ -124,6 +136,12 @@
     </ClCompile>
     <ClCompile Include="CCollisionMgr.cpp">
       <Filter>Manager\CollisionMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="CCointoss.cpp">
+      <Filter>Scene\CointossScene</Filter>
+    </ClCompile>
+    <ClCompile Include="CCoin.cpp">
+      <Filter>Object\HoYoungObject</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

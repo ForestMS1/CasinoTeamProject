@@ -144,6 +144,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="CasinoTeamProject.h" />
+    <ClInclude Include="CCoin.h" />
+    <ClInclude Include="CCointoss.h" />
     <ClInclude Include="CCollisionMgr.h" />
     <ClInclude Include="CKeyMgr.h" />
     <ClInclude Include="CMainGame.h" />
@@ -161,6 +163,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CasinoTeamProject.cpp" />
+    <ClCompile Include="CCoin.cpp" />
+    <ClCompile Include="CCointoss.cpp" />
     <ClCompile Include="CCollisionMgr.cpp" />
     <ClCompile Include="CKeyMgr.cpp" />
     <ClCompile Include="CMainGame.cpp" />
