@@ -48,6 +48,7 @@
     </Filter>
     <Filter Include="Object\LineJump">
       <UniqueIdentifier>{58b757e0-8e82-4adb-a4ad-4c03e5709cb2}</UniqueIdentifier>
+    </Filter>
 	</Filter>
     <Filter Include="Design">
       <UniqueIdentifier>{72464302-974f-46fa-81a3-ca906350086d}</UniqueIdentifier>
@@ -87,6 +88,9 @@
     </Filter>
     <Filter Include="Scene\CardPairScene\CardMgr">
       <UniqueIdentifier>{073c25c5-87b6-4865-90f8-3af5a0ddb5f3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\LineShot">
+      <UniqueIdentifier>{c11ced54-e92b-4b62-a56a-a5cfdbe97731}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -167,6 +171,7 @@
     </ClInclude>
     <ClInclude Include="CPlayerR.h">
       <Filter>Object\LineJump</Filter>
+    </ClInclude>
 	</ClInclude>
     <ClInclude Include="CAbstractFactory.h">
       <Filter>Design\AbstractFactory</Filter>
@@ -203,6 +208,27 @@
     </ClInclude>
     <ClInclude Include="CCardMgr.h">
       <Filter>Scene\CardPairScene\CardMgr</Filter>
+    </ClInclude>
+    <ClInclude Include="CScene.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="CSceneMgr.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="CScene.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="CSceneMgr.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="CLineShoot.h">
+      <Filter>Object\LineShot</Filter>
+    </ClInclude>
+    <ClInclude Include="CPlayerL.h">
+      <Filter>Object\LineShot</Filter>
+    </ClInclude>
+    <ClInclude Include="CSceneLineShoot.h">
+      <Filter>Scene</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -268,6 +294,7 @@
     </ClCompile>
     <ClCompile Include="CPlayerR.cpp">
       <Filter>Object\LineJump</Filter>
+    </ClCompile>
 	</ClCompile>
     <ClCompile Include="CAbstractFactory.cpp">
       <Filter>Design\AbstractFactory</Filter>
@@ -304,6 +331,27 @@
     </ClCompile>
     <ClCompile Include="CCardMgr.cpp">
       <Filter>Scene\CardPairScene\CardMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="CScene.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="CSceneMgr.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="CScene.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="CSceneMgr.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="CLineShoot.cpp">
+      <Filter>Object\LineShot</Filter>
+    </ClCompile>
+    <ClCompile Include="CPlayerL.cpp">
+      <Filter>Object\LineShot</Filter>
+    </ClCompile>
+    <ClCompile Include="CSceneLineShoot.cpp">
+      <Filter>Scene</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
