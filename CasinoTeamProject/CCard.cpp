@@ -20,6 +20,7 @@ CCard::~CCard()
 void CCard::Initialize()
 {
     m_tInfo.vScale = { 75.f, 100.f, 0.f };
+    m_tInfo.vLook = { 0.f, 1.f, 0.f };
     float fHalfX = m_tInfo.vScale.x * 0.5f;
     float fHalfY = m_tInfo.vScale.y * 0.5f;
 
@@ -76,7 +77,39 @@ int CCard::Update()
             // 이동
             D3DXVec3TransformCoord(&vertex, &vertex, &matTrans);
         }
+        D3DXVec3TransformCoord(&m_tInfo.vLook, &m_tInfo.vLook, &matRotate);
         D3DXVec3TransformCoord(&m_tInfo.vPos, &m_tInfo.vPos, &matTrans);
+    }
+    else
+    {
+        D3DXVECTOR3 axisY = { 0.f, 1.f, 0.f };
+        float dot = D3DXVec3Dot(&m_tInfo.vLook, &axisY);
+        float angle = acosf(dot);
+        if (D3DXToDegree(angle) > 1.f)
+        {
+            D3DXMATRIX matRotate;
+            D3DXMatrixIdentity(&matRotate);
+
+
+            // 회전행렬 구하기
+            D3DXMatrixRotationZ(&matRotate, D3DXToRadian(5.f));
+
+            // 원점으로 이동하는 행렬, 원래 자리로 돌아오는 행렬 구하기
+            D3DXMATRIX matGoOrigin, matGoPrev;
+            D3DXMatrixIdentity(&matGoOrigin);
+            D3DXMatrixIdentity(&matGoPrev);
+            D3DXMatrixTranslation(&matGoOrigin, -m_tInfo.vPos.x, -m_tInfo.vPos.y, -m_tInfo.vPos.z);
+            D3DXMatrixTranslation(&matGoPrev, m_tInfo.vPos.x, m_tInfo.vPos.y, m_tInfo.vPos.z);
+
+            for (auto& vertex : m_vVertexes)
+            {
+                //회전
+                D3DXVec3TransformCoord(&vertex, &vertex, &matGoOrigin);
+                D3DXVec3TransformCoord(&vertex, &vertex, &matRotate);
+                D3DXVec3TransformCoord(&vertex, &vertex, &matGoPrev);
+            }
+            D3DXVec3TransformCoord(&m_tInfo.vLook, &m_tInfo.vLook, &matRotate);
+        }
     }
     return 0;
 }

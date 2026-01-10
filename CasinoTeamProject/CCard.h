@@ -4,7 +4,7 @@ class CCard :
     public CObj
 {
 public:
-    enum CARDTYPE { HEART, SPADE, CLOVER, TYPE_END};
+    enum CARDTYPE { HEART, SPADE, CLOVER, TYPE_END };
 public:
     CCard();
     ~CCard();

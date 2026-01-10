@@ -22,12 +22,12 @@ void CCardMgr::Initialize()
 	// 행 간격
 	float fDistRow = 200.f;
 	// 열 간격
-	float fDistCol = 200.f;
+	float fDistCol = 120.f;
 
 	// 카드가 배치될 pos를 저장
 	for (int i = 0; i < 3; ++i)
 	{
-		for (int j = 0; j < 5; ++j)
+		for (int j = 0; j < 6; ++j)
 		{
 			m_vecCardPosition.push_back(D3DXVECTOR3(fStartPosX + j * fDistCol, fStartPosY + i * fDistRow, 0.f));
 		}
