@@ -2,6 +2,7 @@
 #include "CTestCube.h"
 #include "CKeyMgr.h"
 
+// webhook 테스트 주석
 
 // 프레임워크 테스트용 객체입니다.
 

@@ -12,30 +12,30 @@ void CCollisionMgr::Collision_RectEx(list<CObj*> _Dst, list<CObj*> _Src)
 		{
 			if (Check_Rect(Dst, Src, &fWidth, &fHeight))
 			{
-				// »ó ÇÏ Ãæµ¹
+				// ìƒ í•˜ ì¶©ëŒ
 				if (fWidth > fHeight)
 				{
-					// »ó Ãæµ¹
+					// ìƒ ì¶©ëŒ
 					if (Dst->Get_Info().vPos.y < Src->Get_Info().vPos.y)
 					{
 						Dst->Set_PosY(-fHeight);
 					}
-					// ÇÏ Ãæµ¹
+					// í•˜ ì¶©ëŒ
 					else
 					{
 						Dst->Set_PosY(fHeight);
 					}
 				}
 
-				// ÁÂ ¿ì Ãæµ¹
+				// ì¢Œ ìš° ì¶©ëŒ
 				else
 				{
-					// ÁÂ Ãæµ¹
+					// ì¢Œ ì¶©ëŒ
 					if (Dst->Get_Info().vPos.x < Src->Get_Info().vPos.x)
 					{
 						Dst->Set_PosX(-fWidth);
 					}
-					// ¿ì Ãæµ¹
+					// ìš° ì¶©ëŒ
 					else
 					{
 						Dst->Set_PosX(fWidth);
@@ -52,8 +52,8 @@ bool CCollisionMgr::Check_Rect(CObj* pDst, CObj* pSrc, float* pX, float* pY)
 	float		fWidth = fabsf(pDst->Get_Info().vPos.x - pSrc->Get_Info().vPos.x);
 	float		fHeight = fabsf(pDst->Get_Info().vPos.y - pSrc->Get_Info().vPos.y);
 
-	float		fRadiusX = (pDst->Get_Info().fCX + pSrc->Get_Info().fCX) * 0.5f;
-	float		fRadiusY = (pDst->Get_Info().fCY + pSrc->Get_Info().fCY) * 0.5f;
+	float		fRadiusX = (pDst->Get_Info().vScale.x + pSrc->Get_Info().vScale.x) * 0.5f;
+	float		fRadiusY = (pDst->Get_Info().vScale.y + pSrc->Get_Info().vScale.y) * 0.5f;
 
 	if (fRadiusX >= fWidth && fRadiusY >= fHeight)
 	{
@@ -68,7 +68,7 @@ bool CCollisionMgr::Check_Rect(CObj* pDst, CObj* pSrc, float* pX, float* pY)
 
 bool CCollisionMgr::Check_Circle(CObj* pDst, CObj* pSrc)
 {
-	float	fRadius = (pDst->Get_Info().fCX + pSrc->Get_Info().fCX) * 0.5f;
+	float	fRadius = (pDst->Get_Info().vScale.x + pSrc->Get_Info().vScale.x) * 0.5f;
 
 	float	fWidth = fabsf(pDst->Get_Info().vPos.x - pSrc->Get_Info().vPos.x);
 	float	fHeight = fabsf(pDst->Get_Info().vPos.y - pSrc->Get_Info().vPos.y);
@@ -99,33 +99,52 @@ void CCollisionMgr::Collision_Rope(CObj* pDst, CObj* pSrc)
 	D3DXMATRIX  matRopeWorld;
 	D3DXVECTOR3 vRope, vOriginRope;
 	
-	//RopeÀÇ vector°ªÀ» ´ã±â À§ÇÔ
+	//Ropeì˜ vectorê°’ì„ ë‹´ê¸° ìœ„í•¨
 	ZeroMemory(&vRope, sizeof(vRope));
 	ZeroMemory(&vOriginRope, sizeof(vOriginRope));
 
-	//Rope ¿øÁ¡ µ¹¸®±â
+	//Rope ì›ì  ëŒë¦¬ê¸°
 	vOriginRope = { 0.f , WINCY / 2,0.f };
 	vOriginRope -= { 0.f ,WINCY - WINCY / 2 - 50 ,0.f};
 
-	//Rope XÃà ¹İ¿µµÈ ¿ùµå ÁÂÇ¥ °¡Á®¿À±â
+	//Rope Xì¶• ë°˜ì˜ëœ ì›”ë“œ ì¢Œí‘œ ê°€ì ¸ì˜¤ê¸°
 	matRopeWorld = pDst->Get_Info().matWorld;
 	
-	//½¸
+	//ìŠ›
 	D3DXVec3TransformCoord(&vRope,  &vOriginRope,  &matRopeWorld);
 
-	//Player´Â ·ÎÄÃ ÁÂÇ¥·Î
+	//PlayerëŠ” ë¡œì»¬ ì¢Œí‘œë¡œ
 	fPlayerYCheck = pSrc->Get_Info().vPos.y;
 	fRopeYCheck =   vRope.y;
 
-	//´ëÃæ º¸Á¤ °ª ¶§·Á ¸ÂÃß±â
+	//ëŒ€ì¶© ë³´ì • ê°’ ë•Œë ¤ ë§ì¶”ê¸°
 	fPlayerDistance = fabsf(fPlayerYCheck - (WINCY / 2 + 25) );
 	fRopeDistance   = fabsf(fRopeYCheck   - (WINCY / 2 + 45) );
 	
-	//ÀÏÁ¡ ¹üÀ§ ³ôÀÌ ÆíÂ÷°ªÀ¸·Î Player ¹Ğ¾î³»±â
+	//ì¼ì  ë²”ìœ„ ë†’ì´ í¸ì°¨ê°’ìœ¼ë¡œ Player ë°€ì–´ë‚´ê¸°
 	if (fRopeDistance <= 10 && fPlayerDistance <= fRopeDistance && pSrc->Get_LineCheck())
 		pSrc->Set_Hit();
 
-	//ÁÙ ³ÑÀ¸¸é Á¡¼öÃß°¡
+	//ì¤„ ë„˜ìœ¼ë©´ ì ìˆ˜ì¶”ê°€
 	if (fRopeDistance <= 10 && pSrc->Get_Jump())
 		pSrc->Set_Score();
 }
+void CCollisionMgr::Collision_Rect(list<CObj*> _Dst, list<CObj*> _Src)
+{
+	float	fWidth(0.f), fHeight(0.f);
+
+	for (auto& Dst : _Dst)
+	{
+		for (auto& Src : _Src)
+		{
+			if (Check_Rect(Dst, Src, &fWidth, &fHeight))
+			{
+				Dst->Set_Dead();
+				Src->Set_Dead();
+			}
+		}
+	}
+}
+
+
+

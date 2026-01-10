@@ -25,13 +25,35 @@ public:
 	void			Set_Dead()								{ m_bIsDead = true; }
 	void			Set_Hit()								{ m_bHit = true; }
 	void			Set_Score()								{ m_bScore = true; }
+	void Draw_Vertex(HDC hDC);
+
+public:
+	INFO			Get_Info()										{ return m_tInfo; }
+	RENDERID		Get_RenderID() const							{ return m_eRender; }
+
+	// ìœ„ì¹˜
+	void			Set_Pos(float _x, float _y, float _z = 0.f)		{ m_tInfo.vPos.x = _x; m_tInfo.vPos.y = _y; m_tInfo.vPos.z = _z; }
+	void			Set_Pos(D3DXVECTOR3 _vec)						{ m_tInfo.vPos = _vec; }
+	void			Set_PosX(float _x)								{ m_tInfo.vPos.x = _x; }
+	void			Set_PosY(float _y)								{ m_tInfo.vPos.y = _y; }
+	void			Set_PosZ(float _z)								{ m_tInfo.vPos.z = _z; }
+
+	// í¬ê¸°
+	void			Set_Scale(D3DXVECTOR3 _vScale)					{ m_tInfo.vScale = _vScale; }
+
+	// ë°©í–¥
+	void			Set_Dir(D3DXVECTOR3 _vDir)						{ m_tInfo.vDir = _vDir; }
+
+	bool			Is_Dead() const									{ return m_bIsDead; }
+	void			Set_Dead()										{ m_bIsDead = true; }
+
 
 protected:
 
 	D3DXVECTOR3 m_vOriginal[4];
 	D3DXVECTOR3 m_vPoint[4];
 	
-	//Á¤Á¡ º¸Á¤
+	//ì •ì  ë³´ì •
 	D3DXVECTOR3 m_vPos;   
 	
 	INFO		m_tInfo;
@@ -41,15 +63,18 @@ protected:
 	float		m_fScale;
 
 
-	//·»´õ¼ø¼­
+	//ë Œë”ìˆœì„œ
 	RENDERID	m_eRender;
 
-	// »ı»ç ¿©ºÎ
+	// ìƒì‚¬ ì—¬ë¶€
 	bool m_bIsDead;
-	// ÇÃ·¹ÀÌ¾î Ãæµ¹ Ã¼Å©
+	// í”Œë ˆì´ì–´ ì¶©ëŒ ì²´í¬
 	bool		 m_bHit;
-	bool		 m_bScore;    //Á¡¼ö Ã¼Å©
-	bool		 m_bLineCheck; //ÁÙ³Ñ±â ¶óÀÎ Ãæµ¹ Ã¼Å©
-	bool		 m_bJump;      //Á¡ÇÁ Ã¼Å©
+	bool		 m_bScore;    //ì ìˆ˜ ì²´í¬
+	bool		 m_bLineCheck; //ì¤„ë„˜ê¸° ë¼ì¸ ì¶©ëŒ ì²´í¬
+	bool		 m_bJump;      //ì í”„ ì²´í¬
+
+	// ë¬¼ì²´ë¥¼ ê·¸ë¦´ ì  ëª¨ì•„ë‘˜ vector
+	vector<D3DXVECTOR3> m_vVertexes;
 };
 
