@@ -43,6 +43,51 @@
     <Filter Include="Manager\CollisionMgr">
       <UniqueIdentifier>{3e5640c9-764c-4970-8410-3982d0df4f54}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Object\SlotMachine">
+      <UniqueIdentifier>{b980ea20-184d-437a-8eb2-ddabf9b592e4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\LineJump">
+      <UniqueIdentifier>{58b757e0-8e82-4adb-a4ad-4c03e5709cb2}</UniqueIdentifier>
+	</Filter>
+    <Filter Include="Design">
+      <UniqueIdentifier>{72464302-974f-46fa-81a3-ca906350086d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Design\AbstractFactory">
+      <UniqueIdentifier>{4af09abe-9d67-49cd-b91d-e15d83612c00}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Manager\LineMgr">
+      <UniqueIdentifier>{10294ebb-015e-4d20-936d-b96ecb1eea99}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Manager\LineMgr\Line">
+      <UniqueIdentifier>{e7f8bd72-3de2-41bf-aad5-8aefdaac1774}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\RussianRoulletScene">
+      <UniqueIdentifier>{d586a99c-7d05-4bfd-8f4b-c6f9280b72c0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\Revolver">
+      <UniqueIdentifier>{77c8bd0b-2940-4f08-849c-06f35ed44fdc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\Revolver\Bullet">
+      <UniqueIdentifier>{568050d0-2218-46be-95dc-7f1272981db3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\Revolver\RRPlayer">
+      <UniqueIdentifier>{5f8d2862-3307-4051-b7b2-242292bf21f2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\Revolver\Magazine">
+      <UniqueIdentifier>{361c4a67-3994-4063-b925-b1f7fefebc35}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\Revolver\ShotEventObserver">
+      <UniqueIdentifier>{e0f0c301-e512-42f1-bee6-5db10451dc10}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\CardPairScene">
+      <UniqueIdentifier>{2d5bee20-7127-4329-a5d3-eb8fde4ecf84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\Card">
+      <UniqueIdentifier>{de644f5e-dd51-422d-8b65-105c377050e8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\CardPairScene\CardMgr">
+      <UniqueIdentifier>{073c25c5-87b6-4865-90f8-3af5a0ddb5f3}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Scene\CointossScene">
       <UniqueIdentifier>{cfe0ba60-b945-4ba1-a952-1c0d8c1a74e8}</UniqueIdentifier>
     </Filter>
@@ -75,9 +120,6 @@
     <ClInclude Include="Define.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="CMainGame.h">
-      <Filter>MainGame</Filter>
-    </ClInclude>
     <ClInclude Include="CSceneMgr.h">
       <Filter>Manager\SceneMgr</Filter>
     </ClInclude>
@@ -102,15 +144,6 @@
     <ClInclude Include="CCollisionMgr.h">
       <Filter>Manager\CollisionMgr</Filter>
     </ClInclude>
-    <ClInclude Include="CCointoss.h">
-      <Filter>Scene\CointossScene</Filter>
-    </ClInclude>
-    <ClInclude Include="CCoin.h">
-      <Filter>Object\HoYoungObject\CCoin</Filter>
-    </ClInclude>
-    <ClInclude Include="CDuplex.h">
-      <Filter>Object\HoYoungObject\CDuplex</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CasinoTeamProject.cpp">
@@ -118,9 +151,6 @@
     </ClCompile>
     <ClCompile Include="pch.cpp">
       <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="CMainGame.cpp">
-      <Filter>MainGame</Filter>
     </ClCompile>
     <ClCompile Include="CSceneMgr.cpp">
       <Filter>Manager\SceneMgr</Filter>
@@ -145,15 +175,6 @@
     </ClCompile>
     <ClCompile Include="CCollisionMgr.cpp">
       <Filter>Manager\CollisionMgr</Filter>
-    </ClCompile>
-    <ClCompile Include="CCointoss.cpp">
-      <Filter>Scene\CointossScene</Filter>
-    </ClCompile>
-    <ClCompile Include="CCoin.cpp">
-      <Filter>Object\HoYoungObject\CCoin</Filter>
-    </ClCompile>
-    <ClCompile Include="CDuplex.cpp">
-      <Filter>Object\HoYoungObject\CDuplex</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

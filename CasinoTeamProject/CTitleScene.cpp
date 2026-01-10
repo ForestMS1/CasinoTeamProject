@@ -2,6 +2,8 @@
 #include "CTitleScene.h"
 #include "CTestCube.h"
 
+#include "CLineMgr.h"
+
 CTitleScene::CTitleScene()
 {
 }
@@ -22,15 +24,18 @@ void CTitleScene::Initialize()
 
 int CTitleScene::Update()
 {
+
 	return 0;
 }
 
 void CTitleScene::Late_Update()
 {
+
 }
 
 void CTitleScene::Render(HDC hDC)
 {
+
 }
 
 void CTitleScene::Release()

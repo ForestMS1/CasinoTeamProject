@@ -1,11 +1,18 @@
 #include "pch.h"
 #include "CMainGame.h"
 #include "CTitleScene.h"
+#include "CRussianRoulletScene.h"
+#include "CCardPairScene.h"
 #include "CSceneMgr.h"
 #include "CObjMgr.h"
 #include "CKeyMgr.h"
 #include "CCollisionMgr.h"
+<<<<<<< HEAD
 #include "CCointoss.h"
+=======
+#include "CSceneSlotMachine.h"
+#include "CLineMgr.h"
+>>>>>>> master
 
 CMainGame::CMainGame() : m_iFps(0), m_dwLastTime(GetTickCount())
 {
@@ -26,6 +33,7 @@ void CMainGame::Initialize()
 	DeleteObject(hBit);
 
 
+<<<<<<< HEAD
 	// æ¿∏≈¥œ¿˙ø° æ¿ µÓ∑œ
 	CScene* pScene = new CTitleScene;
 	GETSINGLE(CSceneMgr)->CreateScene(L"Title", pScene);
@@ -34,6 +42,21 @@ void CMainGame::Initialize()
 
 	// √≥¿Ω ∫∏ø©¡Ÿ æ¿¿∏∑Œ ¿¸»Ø
 	GETSINGLE(CSceneMgr)->ChangeScene(L"Coin");
+=======
+	// ?¨Îß§?àÏ??????±Î°ù
+	//CScene* pScene = new CTitleScene;
+	CScene* pScene = new CSceneSlotMachine;
+	GETSINGLE(CSceneMgr)->CreateScene(L"RopeJump", pScene);
+
+	pScene = new CRussianRoulletScene;
+	GETSINGLE(CSceneMgr)->CreateScene(L"RussianRoullet", pScene);
+
+	pScene = new CCardPairScene;
+	GETSINGLE(CSceneMgr)->CreateScene(L"CardPairScene", pScene);
+
+	GETSINGLE(CSceneMgr)->ChangeScene(L"RussianRoullet");
+
+>>>>>>> master
 	GETSINGLE(CObjMgr)->Initialize();
 }
 
@@ -49,11 +72,11 @@ void CMainGame::Late_Update()
 	GETSINGLE(CKeyMgr)->Late_Update();
 	GETSINGLE(CObjMgr)->Late_Update();
 
-	// √Êµπ √≥∏Æ øπΩ√ (æ∆∑°√≥∑≥ √ﬂ∞°«œ∏È µÀ¥œ¥Ÿ.)
+	// Ï∂©Îèå Ï≤òÎ¶¨ ?àÏãú (?ÑÎûòÏ≤òÎüº Ï∂îÍ??òÎ©¥ ?©Îãà??)
 	//if (!GETSINGLE(CObjMgr)->GetObjLayer(OBJ_PLAYER).empty())
 	//{
 	//	CCollisionMgr::Collision_RectEx(GETSINGLE(CObjMgr)->GetObjLayer(OBJ_PLAYER), GETSINGLE(CObjMgr)->GetObjLayer(OBJ_ITEM));
-	//	TODO : √Êµπ√≥∏Æ √ﬂ∞°
+	//	TODO : Ï∂©ÎèåÏ≤òÎ¶¨ Ï∂îÍ?
 	//}
 }
 
@@ -75,24 +98,25 @@ void CMainGame::Render()
 	GETSINGLE(CSceneMgr)->Render(m_hBackDC);
 	GETSINGLE(CObjMgr)->Render(m_hBackDC);
 
-	BitBlt(m_hDC,				// ∫πªÁ πﬁ¿ª DC
-		0,						// ∫πªÁ πﬁ¿ª ∞¯∞£¿« LEFT	
-		0,						// ∫πªÁ πﬁ¿ª ∞¯∞£¿« TOP
-		WINCX,					// ∫πªÁ πﬁ¿ª ∞¯∞£¿« ∞°∑Œ 
-		WINCY,					// ∫πªÁ πﬁ¿ª ∞¯∞£¿« ºº∑Œ 
-		m_hBackDC,				// ∫πªÁ «“ DC
-		0,						// ∫πªÁ«“ ¿ÃπÃ¡ˆ¿« LEFT, TOP
+	BitBlt(m_hDC,				// Î≥µÏÇ¨ Î∞õÏùÑ DC
+		0,						// Î≥µÏÇ¨ Î∞õÏùÑ Í≥µÍ∞Ñ??LEFT	
+		0,						// Î≥µÏÇ¨ Î∞õÏùÑ Í≥µÍ∞Ñ??TOP
+		WINCX,					// Î≥µÏÇ¨ Î∞õÏùÑ Í≥µÍ∞Ñ??Í∞ÄÎ°?
+		WINCY,					// Î≥µÏÇ¨ Î∞õÏùÑ Í≥µÍ∞Ñ???∏Î°ú 
+		m_hBackDC,				// Î≥µÏÇ¨ ??DC
+		0,						// Î≥µÏÇ¨???¥Î?ÏßÄ??LEFT, TOP
 		0,
-		SRCCOPY);				// ±◊¥Î∑Œ ∫πªÁ
+		SRCCOPY);				// Í∑∏Î?Î°?Î≥µÏÇ¨
 }
 
 void CMainGame::Release()
 {
-	// ∏≈¥œ¿˙µÈ ªË¡¶
+	// Îß§Îãà?Ä????†ú
 	CSceneMgr::Destroy_Instance();
 	CObjMgr::Destroy_Instance();
 	CKeyMgr::Destroy_Instance();
-
+	
+	CLineMgr::Destroy_Instance();
 
 	ReleaseDC(g_hWnd, m_hDC);
 	ReleaseDC(g_hWnd, m_hBackDC);

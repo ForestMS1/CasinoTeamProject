@@ -1,11 +1,11 @@
 #pragma once
 
-#pragma region «ÿªÛµµ
+#pragma region Ìï¥ÏÉÅÎèÑ
 #define WINCX 800
 #define WINCY 600
 #pragma endregion
 
-#pragma region ΩÃ±€≈Ê ∏≈≈©∑Œ
+#pragma region Ïã±Í∏ÄÌÜ§ Îß§ÌÅ¨Î°ú
 #define SINGLE(T)							\
 private:									\
 T();										\
@@ -38,7 +38,10 @@ public:										\
 #define	OBJ_NOEVENT 0
 #define	OBJ_DEAD    1
 #define VK_MAX		0xff
-enum OBJ_LAYER { OBJ_PLAYER, OBJ_EFFECT, OBJ_ITEM, OBJ_END };
+enum OBJ_LAYER { OBJ_PLAYER, OBJ_EFFECT, OBJ_ITEM, OBJ_ROLLING, OBJ_ROPE, OBJ_END };
+#define PI				3.14159265358979
+//#define TO_RADIAN(D)	D * 180.f/PI
+//#define TO_DEGREE(R)	R * PI/180.f
 enum RENDERID { BACK, GAMEOBJECT, BULLET, PLAYER, EFFECT, UI, RENDER_END };
 #pragma region SafeDelete
 template<typename T>
@@ -54,20 +57,40 @@ void Safe_Delete(T& p)
 
 typedef struct tagInfo
 {
-	D3DXVECTOR3		vPos;		// ¿ßƒ° ∫§≈Õ
-	D3DXVECTOR3		vDir;		// πÊ«‚ ∫§≈Õ
+	D3DXVECTOR3		vPos;		// ÏúÑÏπò Î≤°ÌÑ∞
+	D3DXVECTOR3		vDir;		// Î∞©Ìñ• Î≤°ÌÑ∞
 
 	D3DXVECTOR3		vLook;
-	D3DXVECTOR3		vNormal;	// π˝º± ∫§≈Õ
+	D3DXVECTOR3		vNormal;	// Î≤ïÏÑ† Î≤°ÌÑ∞
 
-	// ∞¥√º¿« ≈©±‚
-	float			fCX;
-	float			fCY;
-	float			fCZ;
+	// Í∞ùÏ≤¥Ïùò ÌÅ¨Í∏∞
+	D3DXVECTOR3		vScale;
+	//float			fCX;
+	//float			fCY;
+	//float			fCZ;
 
 	D3DXMATRIX		matWorld;
 
 }INFO;
 
+typedef struct tagLinePoint
+{
+	float		fX;
+	float		fY;
+
+	tagLinePoint() { ZeroMemory(this, sizeof(tagLinePoint)); }
+	tagLinePoint(float _fX, float _fY) : fX(_fX), fY(_fY) {}
+
+}LINEPOINT;
 
 extern HWND g_hWnd;
+
+
+static D3DXVECTOR3	Get_Mouse()
+{
+	POINT		ptMouse{};
+	GetCursorPos(&ptMouse);
+	ScreenToClient(g_hWnd, &ptMouse);
+
+	return { (float)ptMouse.x, (float)ptMouse.y, 0.f };
+}
