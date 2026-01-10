@@ -14,23 +14,34 @@ public:
 	virtual void Release()								PURE;
 
 public:
+	INFO			Get_Info()								{ return m_tInfo; }
+	D3DXVECTOR3*	Get_PointInfo()							{ return m_vPoint; }
+	RENDERID		Get_RenderID() const					{ return m_eRender; }
+	bool			Get_Jump()								{ return m_bJump; }
+	bool			Get_LineCheck()							{ return m_bLineCheck; }
+	void			Set_PosX(float _x)						{ m_tInfo.vPos.x = _x; }
+	void			Set_PosY(float _y)						{ m_tInfo.vPos.y = _y; }
+	bool			Is_Dead() const							{ return m_bIsDead; }
+	void			Set_Dead()								{ m_bIsDead = true; }
+	void			Set_Hit()								{ m_bHit = true; }
+	void			Set_Score()								{ m_bScore = true; }
 	void Draw_Vertex(HDC hDC);
 
 public:
 	INFO			Get_Info()										{ return m_tInfo; }
 	RENDERID		Get_RenderID() const							{ return m_eRender; }
 
-	// À§Ä¡
+	// ìœ„ì¹˜
 	void			Set_Pos(float _x, float _y, float _z = 0.f)		{ m_tInfo.vPos.x = _x; m_tInfo.vPos.y = _y; m_tInfo.vPos.z = _z; }
 	void			Set_Pos(D3DXVECTOR3 _vec)						{ m_tInfo.vPos = _vec; }
 	void			Set_PosX(float _x)								{ m_tInfo.vPos.x = _x; }
 	void			Set_PosY(float _y)								{ m_tInfo.vPos.y = _y; }
 	void			Set_PosZ(float _z)								{ m_tInfo.vPos.z = _z; }
 
-	// Å©±â
+	// í¬ê¸°
 	void			Set_Scale(D3DXVECTOR3 _vScale)					{ m_tInfo.vScale = _vScale; }
 
-	// ¹æÇâ
+	// ë°©í–¥
 	void			Set_Dir(D3DXVECTOR3 _vDir)						{ m_tInfo.vDir = _vDir; }
 
 	bool			Is_Dead() const									{ return m_bIsDead; }
@@ -38,16 +49,32 @@ public:
 
 
 protected:
-	INFO		m_tInfo;
-	float		m_fSpeed;
 
-	//·»´õ¼ø¼­
+	D3DXVECTOR3 m_vOriginal[4];
+	D3DXVECTOR3 m_vPoint[4];
+	
+	//ì •ì  ë³´ì •
+	D3DXVECTOR3 m_vPos;   
+	
+	INFO		m_tInfo;
+	
+	
+	float		m_fSpeed;
+	float		m_fScale;
+
+
+	//ë Œë”ìˆœì„œ
 	RENDERID	m_eRender;
 
-	// »ı»ç ¿©ºÎ
+	// ìƒì‚¬ ì—¬ë¶€
 	bool m_bIsDead;
+	// í”Œë ˆì´ì–´ ì¶©ëŒ ì²´í¬
+	bool		 m_bHit;
+	bool		 m_bScore;    //ì ìˆ˜ ì²´í¬
+	bool		 m_bLineCheck; //ì¤„ë„˜ê¸° ë¼ì¸ ì¶©ëŒ ì²´í¬
+	bool		 m_bJump;      //ì í”„ ì²´í¬
 
-	// ¹°Ã¼¸¦ ±×¸± Á¡ ¸ğ¾ÆµÑ vector
+	// ë¬¼ì²´ë¥¼ ê·¸ë¦´ ì  ëª¨ì•„ë‘˜ vector
 	vector<D3DXVECTOR3> m_vVertexes;
 };
 
