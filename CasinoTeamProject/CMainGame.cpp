@@ -10,6 +10,8 @@
 #include "CSceneSlotMachine.h"
 #include "CLineMgr.h"
 #include "CSceneLineShoot.h"
+#include "CCointoss.h"
+
 CMainGame::CMainGame() : m_iFps(0), m_dwLastTime(GetTickCount())
 {
 	ZeroMemory(&m_szFPS, sizeof(m_szFPS));
@@ -42,10 +44,14 @@ void CMainGame::Initialize()
 
 	pScene = new CCardPairScene;
 	GETSINGLE(CSceneMgr)->CreateScene(L"CardPairScene", pScene);
+	
+	pScene = new CCointoss;
+	GETSINGLE(CSceneMgr)->CreateScene(L"CoinScene", pScene);
 
+	
 	//GETSINGLE(CSceneMgr)->ChangeScene(L"RussianRoullet");
 
-	GETSINGLE(CSceneMgr)->ChangeScene(L"RopeJump");
+	GETSINGLE(CSceneMgr)->ChangeScene(L"CoinScene");
 
 	GETSINGLE(CObjMgr)->Initialize();
 }

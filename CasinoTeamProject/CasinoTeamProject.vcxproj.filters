@@ -49,7 +49,6 @@
     <Filter Include="Object\LineJump">
       <UniqueIdentifier>{58b757e0-8e82-4adb-a4ad-4c03e5709cb2}</UniqueIdentifier>
     </Filter>
-
     <Filter Include="Design">
       <UniqueIdentifier>{72464302-974f-46fa-81a3-ca906350086d}</UniqueIdentifier>
     </Filter>
@@ -91,6 +90,9 @@
     </Filter>
     <Filter Include="Object\LineShot">
       <UniqueIdentifier>{c11ced54-e92b-4b62-a56a-a5cfdbe97731}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\Coin">
+      <UniqueIdentifier>{6ddfe78b-b153-4ca4-8fee-1a4c2aada8cc}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -172,7 +174,6 @@
     <ClInclude Include="CPlayerR.h">
       <Filter>Object\LineJump</Filter>
     </ClInclude>
-
     <ClInclude Include="CAbstractFactory.h">
       <Filter>Design\AbstractFactory</Filter>
     </ClInclude>
@@ -229,6 +230,18 @@
     </ClInclude>
     <ClInclude Include="CSceneLineShoot.h">
       <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="CScene.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="CSceneMgr.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="CCoin.h">
+      <Filter>Object\Coin</Filter>
+    </ClInclude>
+    <ClInclude Include="CCointoss.h">
+      <Filter>Object\Coin</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -295,7 +308,6 @@
     <ClCompile Include="CPlayerR.cpp">
       <Filter>Object\LineJump</Filter>
     </ClCompile>
-
     <ClCompile Include="CAbstractFactory.cpp">
       <Filter>Design\AbstractFactory</Filter>
     </ClCompile>
@@ -352,6 +364,18 @@
     </ClCompile>
     <ClCompile Include="CSceneLineShoot.cpp">
       <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="CScene.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="CSceneMgr.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="CCoin.cpp">
+      <Filter>Object\Coin</Filter>
+    </ClCompile>
+    <ClCompile Include="CCointoss.cpp">
+      <Filter>Object\Coin</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
