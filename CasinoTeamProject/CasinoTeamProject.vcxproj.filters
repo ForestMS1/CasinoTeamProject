@@ -43,6 +43,11 @@
     <Filter Include="Manager\CollisionMgr">
       <UniqueIdentifier>{3e5640c9-764c-4970-8410-3982d0df4f54}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Object\SlotMachine">
+      <UniqueIdentifier>{b980ea20-184d-437a-8eb2-ddabf9b592e4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\LineJump">
+      <UniqueIdentifier>{58b757e0-8e82-4adb-a4ad-4c03e5709cb2}</UniqueIdentifier>
     <Filter Include="Design">
       <UniqueIdentifier>{72464302-974f-46fa-81a3-ca906350086d}</UniqueIdentifier>
     </Filter>
@@ -102,9 +107,6 @@
     <ClInclude Include="Define.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="CMainGame.h">
-      <Filter>MainGame</Filter>
-    </ClInclude>
     <ClInclude Include="CSceneMgr.h">
       <Filter>Manager\SceneMgr</Filter>
     </ClInclude>
@@ -129,6 +131,41 @@
     <ClInclude Include="CCollisionMgr.h">
       <Filter>Manager\CollisionMgr</Filter>
     </ClInclude>
+    <ClInclude Include="CITemSquare.h">
+      <Filter>Object\SlotMachine</Filter>
+    </ClInclude>
+    <ClInclude Include="CITemTriangle.h">
+      <Filter>Object\SlotMachine</Filter>
+    </ClInclude>
+    <ClInclude Include="CSlotItem.h">
+      <Filter>Object\SlotMachine</Filter>
+    </ClInclude>
+    <ClInclude Include="CAbstractFactory.h">
+      <Filter>소스 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="CMainGame.h">
+      <Filter>MainGame</Filter>
+    </ClInclude>
+    <ClInclude Include="CSceneSlotMachine.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="CFirstPerson.h">
+      <Filter>Object\LineJump</Filter>
+    </ClInclude>
+    <ClInclude Include="CSecondPerson.h">
+      <Filter>Object\LineJump</Filter>
+    </ClInclude>
+    <ClInclude Include="CRope.h">
+      <Filter>Object\LineJump</Filter>
+    </ClInclude>
+    <ClInclude Include="CRopeDot.h">
+      <Filter>Object\LineJump</Filter>
+    </ClInclude>
+    <ClInclude Include="CRopeLine.h">
+      <Filter>Object\LineJump</Filter>
+    </ClInclude>
+    <ClInclude Include="CPlayerR.h">
+      <Filter>Object\LineJump</Filter>
     <ClInclude Include="CAbstractFactory.h">
       <Filter>Design\AbstractFactory</Filter>
     </ClInclude>
@@ -173,9 +210,6 @@
     <ClCompile Include="pch.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="CMainGame.cpp">
-      <Filter>MainGame</Filter>
-    </ClCompile>
     <ClCompile Include="CSceneMgr.cpp">
       <Filter>Manager\SceneMgr</Filter>
     </ClCompile>
@@ -200,6 +234,38 @@
     <ClCompile Include="CCollisionMgr.cpp">
       <Filter>Manager\CollisionMgr</Filter>
     </ClCompile>
+    <ClCompile Include="CITemSquare.cpp">
+      <Filter>Object\SlotMachine</Filter>
+    </ClCompile>
+    <ClCompile Include="CSlotItem.cpp">
+      <Filter>Object\SlotMachine</Filter>
+    </ClCompile>
+    <ClCompile Include="CMainGame.cpp">
+      <Filter>MainGame</Filter>
+    </ClCompile>
+    <ClCompile Include="CSceneSlotMachine.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="CITemTriangle.cpp">
+      <Filter>Object\SlotMachine</Filter>
+    </ClCompile>
+    <ClCompile Include="CFirstPerson.cpp">
+      <Filter>Object\LineJump</Filter>
+    </ClCompile>
+    <ClCompile Include="CSecondPerson.cpp">
+      <Filter>Object\LineJump</Filter>
+    </ClCompile>
+    <ClCompile Include="CRope.cpp">
+      <Filter>Object\LineJump</Filter>
+    </ClCompile>
+    <ClCompile Include="CRopeDot.cpp">
+      <Filter>Object\LineJump</Filter>
+    </ClCompile>
+    <ClCompile Include="CRopeLine.cpp">
+      <Filter>Object\LineJump</Filter>
+    </ClCompile>
+    <ClCompile Include="CPlayerR.cpp">
+      <Filter>Object\LineJump</Filter>
     <ClCompile Include="CAbstractFactory.cpp">
       <Filter>Design\AbstractFactory</Filter>
     </ClCompile>
