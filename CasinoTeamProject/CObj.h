@@ -55,6 +55,7 @@ protected:
 	CObj*		m_pTarget;
 	float		m_fSpeed;
 	float		m_fScale;
+	float		m_fAngle;
 
 
 	//렌더순서
