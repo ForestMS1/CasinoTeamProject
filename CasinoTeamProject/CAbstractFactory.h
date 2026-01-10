@@ -20,10 +20,6 @@ public:
 		pObj->Initialize();
 		return pObj;
 	}
-	
-template<typename T>
-class CAbstractFactory
-{
 public:
 	static CObj* Create(float fX, float fY, float fZ)
 	{
@@ -40,4 +36,3 @@ public:
 		return pObj;
 	}
 };
-

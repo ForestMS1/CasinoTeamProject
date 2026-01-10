@@ -48,6 +48,7 @@
     </Filter>
     <Filter Include="Object\LineJump">
       <UniqueIdentifier>{58b757e0-8e82-4adb-a4ad-4c03e5709cb2}</UniqueIdentifier>
+	</Filter>
     <Filter Include="Design">
       <UniqueIdentifier>{72464302-974f-46fa-81a3-ca906350086d}</UniqueIdentifier>
     </Filter>
@@ -166,6 +167,7 @@
     </ClInclude>
     <ClInclude Include="CPlayerR.h">
       <Filter>Object\LineJump</Filter>
+	</ClInclude>
     <ClInclude Include="CAbstractFactory.h">
       <Filter>Design\AbstractFactory</Filter>
     </ClInclude>
@@ -266,6 +268,7 @@
     </ClCompile>
     <ClCompile Include="CPlayerR.cpp">
       <Filter>Object\LineJump</Filter>
+	</ClCompile>
     <ClCompile Include="CAbstractFactory.cpp">
       <Filter>Design\AbstractFactory</Filter>
     </ClCompile>
