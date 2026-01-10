@@ -15,8 +15,13 @@ public:
 
 private:
   float m_fAngle;
-  D3DXVECTOR3 vLocal[4];
-  POINT tPoints[4];
+  bool  m_isMove;
+  bool  m_bisTop;
 
+  D3DXVECTOR3 vLocal[4];
+  D3DXVECTOR3 vWorld;
+
+  POINT tPoints[4];
+  POINT m_SawPoints[6] ;
 };
 
