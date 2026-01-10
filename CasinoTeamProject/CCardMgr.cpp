@@ -32,6 +32,15 @@ void CCardMgr::Initialize()
 			m_vecCardPosition.push_back(D3DXVECTOR3(fStartPosX + j * fDistCol, fStartPosY + i * fDistRow, 0.f));
 		}
 	}
+
+	for (int i = 0; i < 18; ++i)
+	{
+		CCard* pCard = new CCard(CCard::CARDTYPE(i / 2));
+		pCard->Set_Pos(WINCX, WINCY, 0.f);
+		pCard->Initialize();
+		GETSINGLE(CObjMgr)->AddObject(OBJ_ITEM, pCard);
+		//GETSINGLE(CObjMgr)->AddObject(OBJ_ITEM, CAbstractFactory<CCard>::Create(D3DXVECTOR3(WINCX, WINCY, 0.f)));
+	}
 }
 
 void CCardMgr::Update()

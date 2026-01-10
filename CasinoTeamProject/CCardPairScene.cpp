@@ -13,11 +13,6 @@ CCardPairScene::~CCardPairScene()
 void CCardPairScene::Initialize()
 {
     GETSINGLE(CCardMgr)->Initialize();
-
-    for (int i = 0; i < 18; ++i)
-    {
-        GETSINGLE(CObjMgr)->AddObject(OBJ_ITEM, CAbstractFactory<CCard>::Create(D3DXVECTOR3(WINCX, WINCY, 0.f)));
-    }
 }
 
 int CCardPairScene::Update()
