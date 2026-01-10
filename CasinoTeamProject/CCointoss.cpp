@@ -1,5 +1,6 @@
 #include "pch.h"
 #include "CCointoss.h"
+#include "CCoin.h"
 
 CCointoss::CCointoss()
 {
@@ -11,18 +12,13 @@ CCointoss::~CCointoss()
 
 void CCointoss::Initialize()
 {
-  pCoin = new CCoin;
-  GETSINGLE(CObjMgr)->AddObject(OBJ_PLAYER, pCoin);
+  CCoin* testCoin = new CCoin;
+  GETSINGLE(CObjMgr)->AddObject(OBJ_PLAYER, testCoin);
 }
 
 int CCointoss::Update()
 {
-  if (pCoin->Get_isFlip())
-  {
-    pDuplex = new CDuplex;
-    GETSINGLE(CObjMgr)->AddObject(OBJ_PLAYER, pDuplex);
-  }
-  return OBJ_NOEVENT;
+  return 0;
 }
 
 void CCointoss::Late_Update()

@@ -1,7 +1,5 @@
 #pragma once
 #include "CScene.h"
-#include "CDuplex.h"
-#include "CCoin.h"
 class CCointoss : public CScene
 {
 public:
@@ -14,8 +12,6 @@ public:
   void Late_Update() override;
   void Render(HDC hDC) override;
   void Release() override;
-private:
-  CDuplex* pDuplex;
-  CCoin*   pCoin;
+  void Key_Input();
 };
 

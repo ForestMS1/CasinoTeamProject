@@ -13,15 +13,15 @@ public:
   void Render(HDC hDC) override;
   void Release() override;
 
-  bool Get_isFlip() { return m_isFlip; }
-
 private:
+  float m_fAngle;
+  bool  m_isMove;
   bool  m_bisTop;
-  bool  m_isFlip;
 
   D3DXVECTOR3 vLocal[4];
   D3DXVECTOR3 vWorld;
 
   POINT tPoints[4];
+  POINT m_SawPoints[6] ;
 };
 

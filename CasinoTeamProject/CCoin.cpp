@@ -1,10 +1,10 @@
 #include "pch.h"
 #include "CCoin.h"
 
-CCoin::CCoin():m_bisTop(false),m_isFlip(false)
+CCoin::CCoin():m_fAngle(0.f),m_bisTop(false)
 {
   m_eRender = PLAYER;
-  m_fSpeed = 10.f;
+  m_fSpeed = 3.f;
 }
 
 CCoin::~CCoin()
@@ -13,13 +13,13 @@ CCoin::~CCoin()
 
 void CCoin::Initialize()
 {
-  m_fAngle = 0.f;
   m_tInfo.vPos = { 400,450,0 };
   m_tInfo.vDir = { 1.f,0.f,0.f };
 }
 
 int CCoin::Update()
 {
+  m_isMove = false;
   D3DXMATRIX matScale, matRotz, matTrans;
 
   D3DXMatrixScaling(&matScale, 1.f, 1.f, 1.f);
@@ -44,7 +44,6 @@ int CCoin::Update()
     { 
       m_fAngle = 0.f;
       m_bisTop = false;
-      m_isFlip = true;
     }
   }
   
@@ -63,8 +62,6 @@ void CCoin::Late_Update()
 
 void CCoin::Render(HDC hDC)
 {
-  if(!m_isFlip)
-  {
   // 동전 크기 설정 (로컬 공간)
     float fHalfWidth = 50.f;
     float fHalfHeight = 8.f;
@@ -82,9 +79,10 @@ void CCoin::Render(HDC hDC)
       D3DXVec3TransformCoord(&vWorld, &vLocal[i], &m_tInfo.matWorld);
       tPoints[i].x = (LONG)(vWorld.x);
       tPoints[i].y = (LONG)(vWorld.y);
-    } 
+    }  
+
     Polygon(hDC, tPoints, 4);
-  }
+         
  // int iGap = 8;
  //
  // // tPoints[0].x (왼쪽 끝) 부터 tPoints[1].x (오른쪽 끝) 까지 반복
