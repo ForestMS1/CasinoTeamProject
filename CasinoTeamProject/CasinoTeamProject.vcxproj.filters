@@ -49,6 +49,12 @@
     <Filter Include="Object\HoYoungObject">
       <UniqueIdentifier>{aa7f7591-3da4-4081-9d2b-59f423aab685}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Object\HoYoungObject\CCoin">
+      <UniqueIdentifier>{c6c025bd-3239-44f1-8fb9-ca0ea13e196e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\HoYoungObject\CDuplex">
+      <UniqueIdentifier>{5131f5da-d355-4f7e-80c0-3f7ba545978c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -100,7 +106,10 @@
       <Filter>Scene\CointossScene</Filter>
     </ClInclude>
     <ClInclude Include="CCoin.h">
-      <Filter>Object\HoYoungObject</Filter>
+      <Filter>Object\HoYoungObject\CCoin</Filter>
+    </ClInclude>
+    <ClInclude Include="CDuplex.h">
+      <Filter>Object\HoYoungObject\CDuplex</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -141,7 +150,10 @@
       <Filter>Scene\CointossScene</Filter>
     </ClCompile>
     <ClCompile Include="CCoin.cpp">
-      <Filter>Object\HoYoungObject</Filter>
+      <Filter>Object\HoYoungObject\CCoin</Filter>
+    </ClCompile>
+    <ClCompile Include="CDuplex.cpp">
+      <Filter>Object\HoYoungObject\CDuplex</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -1,27 +1,19 @@
 #pragma once
 #include "CObj.h"
-class CCoin :  public CObj
+class CDuplex : public CObj
 {
 public:
-  CCoin();
-  ~CCoin();
+  CDuplex();
+  ~CDuplex();
+
 public:
-  // CObj을(를) 통해 상속됨
   void Initialize() override;
   int Update() override;
   void Late_Update() override;
   void Render(HDC hDC) override;
   void Release() override;
-
-  bool Get_isFlip() { return m_isFlip; }
-
 private:
-  bool  m_bisTop;
-  bool  m_isFlip;
-
-  D3DXVECTOR3 vLocal[4];
   D3DXVECTOR3 vWorld;
-
   POINT tPoints[4];
 };
 

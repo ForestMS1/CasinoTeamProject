@@ -147,6 +147,7 @@
     <ClInclude Include="CCoin.h" />
     <ClInclude Include="CCointoss.h" />
     <ClInclude Include="CCollisionMgr.h" />
+    <ClInclude Include="CDuplex.h" />
     <ClInclude Include="CKeyMgr.h" />
     <ClInclude Include="CMainGame.h" />
     <ClInclude Include="CObj.h" />
@@ -166,6 +167,7 @@
     <ClCompile Include="CCoin.cpp" />
     <ClCompile Include="CCointoss.cpp" />
     <ClCompile Include="CCollisionMgr.cpp" />
+    <ClCompile Include="CDuplex.cpp" />
     <ClCompile Include="CKeyMgr.cpp" />
     <ClCompile Include="CMainGame.cpp" />
     <ClCompile Include="CObj.cpp" />

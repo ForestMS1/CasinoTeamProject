@@ -26,6 +26,7 @@ public:
 protected:
 	INFO		m_tInfo;
 	float		m_fSpeed;
+	float	  m_fAngle;
 
 	//·»´õ¼ø¼­
 	RENDERID	m_eRender;
