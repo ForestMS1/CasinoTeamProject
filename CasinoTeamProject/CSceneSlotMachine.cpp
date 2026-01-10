@@ -8,6 +8,8 @@
 #include "CRopeLine.h"
 #include "CPlayerR.h"
 #include "CCollisionMgr.h"
+#include "CKeyMgr.h"
+#include "CSceneMgr.h"
 CSceneSlotMachine::CSceneSlotMachine()
 {
 }
@@ -22,13 +24,18 @@ void CSceneSlotMachine::Initialize()
     GETSINGLE(CObjMgr)->AddObject(OBJ_ROLLING, CAbstractFactory<CSecondPerson>::Create());
 
     GETSINGLE(CObjMgr)->AddObject(OBJ_ROLLING, CAbstractFactory<CRopeLine>::Create());
-    GETSINGLE(CObjMgr)->AddObject(OBJ_ROPE, CAbstractFactory<CRope>::Create());
+
     GETSINGLE(CObjMgr)->AddObject(OBJ_PLAYER, CAbstractFactory<CPlayerR>::Create());
+    GETSINGLE(CObjMgr)->AddObject(OBJ_ROPE, CAbstractFactory<CRope>::Create());
 
 }
 
 int CSceneSlotMachine::Update()
 {
+    if (GETSINGLE(CKeyMgr)->Get_KeyState('P'))
+    {
+        GETSINGLE(CSceneMgr)->ChangeScene(L"LineShoot");
+    }
     return 0;
 }
 
@@ -44,5 +51,7 @@ void CSceneSlotMachine::Render(HDC hDC)
 
 void CSceneSlotMachine::Release()
 {
+    GETSINGLE(CObjMgr)->DeleteLayerObj(OBJ_PLAYER);
     GETSINGLE(CObjMgr)->DeleteLayerObj(OBJ_ROLLING);
+    GETSINGLE(CObjMgr)->DeleteLayerObj(OBJ_ROPE);
 }

@@ -9,7 +9,7 @@
 #include "CCollisionMgr.h"
 #include "CSceneSlotMachine.h"
 #include "CLineMgr.h"
-
+#include "CSceneLineShoot.h"
 CMainGame::CMainGame() : m_iFps(0), m_dwLastTime(GetTickCount())
 {
 	ZeroMemory(&m_szFPS, sizeof(m_szFPS));
@@ -34,13 +34,18 @@ void CMainGame::Initialize()
 	CScene* pScene = new CSceneSlotMachine;
 	GETSINGLE(CSceneMgr)->CreateScene(L"RopeJump", pScene);
 
+	pScene = new CSceneLineShoot;
+	GETSINGLE(CSceneMgr)->CreateScene(L"LineShoot", pScene);
+
 	pScene = new CRussianRoulletScene;
 	GETSINGLE(CSceneMgr)->CreateScene(L"RussianRoullet", pScene);
 
 	pScene = new CCardPairScene;
 	GETSINGLE(CSceneMgr)->CreateScene(L"CardPairScene", pScene);
 
-	GETSINGLE(CSceneMgr)->ChangeScene(L"RussianRoullet");
+	//GETSINGLE(CSceneMgr)->ChangeScene(L"RussianRoullet");
+
+	GETSINGLE(CSceneMgr)->ChangeScene(L"RopeJump");
 
 	GETSINGLE(CObjMgr)->Initialize();
 }

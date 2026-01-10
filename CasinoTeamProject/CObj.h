@@ -19,17 +19,14 @@ public:
 	RENDERID		Get_RenderID() const					{ return m_eRender; }
 	bool			Get_Jump()								{ return m_bJump; }
 	bool			Get_LineCheck()							{ return m_bLineCheck; }
-	void			Set_PosX(float _x)						{ m_tInfo.vPos.x = _x; }
-	void			Set_PosY(float _y)						{ m_tInfo.vPos.y = _y; }
 	bool			Is_Dead() const							{ return m_bIsDead; }
 	void			Set_Dead()								{ m_bIsDead = true; }
 	void			Set_Hit()								{ m_bHit = true; }
 	void			Set_Score()								{ m_bScore = true; }
+	void			Set_Target(CObj* pTarget)				{ m_pTarget = pTarget; }
 	void Draw_Vertex(HDC hDC);
 	void Draw_Vertex_Color(HDC hDC, float _r, float _g, float _b);
 public:
-	INFO			Get_Info()										{ return m_tInfo; }
-	RENDERID		Get_RenderID() const							{ return m_eRender; }
 
 	// 위치
 	void			Set_Pos(float _x, float _y, float _z = 0.f)		{ m_tInfo.vPos.x = _x; m_tInfo.vPos.y = _y; m_tInfo.vPos.z = _z; }
@@ -44,9 +41,6 @@ public:
 	// 방향
 	void			Set_Dir(D3DXVECTOR3 _vDir)						{ m_tInfo.vDir = _vDir; }
 
-	bool			Is_Dead() const									{ return m_bIsDead; }
-	void			Set_Dead()										{ m_bIsDead = true; }
-
 
 protected:
 
@@ -58,7 +52,7 @@ protected:
 	
 	INFO		m_tInfo;
 	
-	
+	CObj*		m_pTarget;
 	float		m_fSpeed;
 	float		m_fScale;
 
