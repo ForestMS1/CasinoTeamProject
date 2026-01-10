@@ -28,3 +28,22 @@ void CObj::Draw_Vertex(HDC hDC)
 	}
 	LineTo(hDC, m_vVertexes[0].x, m_vVertexes[0].y);
 }
+
+void CObj::Draw_Vertex_Color(HDC hDC, float _r, float _g, float _b)
+{
+	if (m_vVertexes.empty())
+		return;
+
+	HPEN hPen = CreatePen(0, 5, RGB(_r, _g, _b));
+	HPEN hOldPen = (HPEN)SelectObject(hDC, hPen);
+
+	MoveToEx(hDC, m_vVertexes[0].x, m_vVertexes[0].y, nullptr);
+	for (auto& vertex : m_vVertexes)
+	{
+		LineTo(hDC, vertex.x, vertex.y);
+	}
+	LineTo(hDC, m_vVertexes[0].x, m_vVertexes[0].y);
+
+	hPen = (HPEN)SelectObject(hDC, hOldPen);
+	DeleteObject(hPen);
+}

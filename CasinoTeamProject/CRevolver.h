@@ -21,6 +21,7 @@ private:
     D3DXVECTOR3 m_vecMuzzle;
     float   m_fAngle;
     int     m_iProbability;
+    int     m_iShotCount;
     bool    m_bIsRight;
     bool    m_bIsShotInit;
 

@@ -24,12 +24,10 @@ void CRussianRoulletScene::Initialize()
 	GETSINGLE(CObjMgr)->AddObject(OBJ_ITEM, pMagazine);
 	GETSINGLE(CShotEventObserver)->Initialize(pRevolver, pMagazine);
 
-	CObj* pPlayer1 = new CRRPlayer;
-	pPlayer1->Set_Pos(D3DXVECTOR3((WINCX >> 1) + 300.f, WINCY >> 1, 0.f));
-	GETSINGLE(CObjMgr)->AddObject(OBJ_PLAYER, pPlayer1);
-	CObj* pPlayer2 = new CRRPlayer;
-	pPlayer2->Set_Pos(D3DXVECTOR3((WINCX >> 1) - 300.f, WINCY >> 1, 0.f));
-	GETSINGLE(CObjMgr)->AddObject(OBJ_PLAYER, pPlayer2);
+	GETSINGLE(CObjMgr)->AddObject(OBJ_PLAYER, 
+		CAbstractFactory<CRRPlayer>::Create(D3DXVECTOR3((WINCX >> 1) + 300.f, WINCY >> 1, 0.f)));
+	GETSINGLE(CObjMgr)->AddObject(OBJ_PLAYER,
+		CAbstractFactory<CRRPlayer>::Create(D3DXVECTOR3((WINCX >> 1) - 300.f, WINCY >> 1, 0.f)));
 }
 
 int CRussianRoulletScene::Update()

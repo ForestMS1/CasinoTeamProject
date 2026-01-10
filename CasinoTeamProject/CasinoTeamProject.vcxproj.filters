@@ -78,6 +78,15 @@
     <Filter Include="Object\Revolver\ShotEventObserver">
       <UniqueIdentifier>{e0f0c301-e512-42f1-bee6-5db10451dc10}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Scene\CardPairScene">
+      <UniqueIdentifier>{2d5bee20-7127-4329-a5d3-eb8fde4ecf84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\Card">
+      <UniqueIdentifier>{de644f5e-dd51-422d-8b65-105c377050e8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\CardPairScene\CardMgr">
+      <UniqueIdentifier>{073c25c5-87b6-4865-90f8-3af5a0ddb5f3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -184,6 +193,15 @@
     <ClInclude Include="CShotEventObserver.h">
       <Filter>Object\Revolver\ShotEventObserver</Filter>
     </ClInclude>
+    <ClInclude Include="CCardPairScene.h">
+      <Filter>Scene\CardPairScene</Filter>
+    </ClInclude>
+    <ClInclude Include="CCard.h">
+      <Filter>Object\Card</Filter>
+    </ClInclude>
+    <ClInclude Include="CCardMgr.h">
+      <Filter>Scene\CardPairScene\CardMgr</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CasinoTeamProject.cpp">
@@ -274,6 +292,15 @@
     </ClCompile>
     <ClCompile Include="CShotEventObserver.cpp">
       <Filter>Object\Revolver\ShotEventObserver</Filter>
+    </ClCompile>
+    <ClCompile Include="CCardPairScene.cpp">
+      <Filter>Scene\CardPairScene</Filter>
+    </ClCompile>
+    <ClCompile Include="CCard.cpp">
+      <Filter>Object\Card</Filter>
+    </ClCompile>
+    <ClCompile Include="CCardMgr.cpp">
+      <Filter>Scene\CardPairScene\CardMgr</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

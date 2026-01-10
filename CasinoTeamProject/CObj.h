@@ -26,7 +26,7 @@ public:
 	void			Set_Hit()								{ m_bHit = true; }
 	void			Set_Score()								{ m_bScore = true; }
 	void Draw_Vertex(HDC hDC);
-
+	void Draw_Vertex_Color(HDC hDC, float _r, float _g, float _b);
 public:
 	INFO			Get_Info()										{ return m_tInfo; }
 	RENDERID		Get_RenderID() const							{ return m_eRender; }
