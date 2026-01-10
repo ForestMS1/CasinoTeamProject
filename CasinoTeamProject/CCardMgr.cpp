@@ -41,6 +41,9 @@ void CCardMgr::Initialize()
 		GETSINGLE(CObjMgr)->AddObject(OBJ_ITEM, pCard);
 		//GETSINGLE(CObjMgr)->AddObject(OBJ_ITEM, CAbstractFactory<CCard>::Create(D3DXVECTOR3(WINCX, WINCY, 0.f)));
 	}
+
+	m_pDeterminingCard.first = nullptr;
+	m_pDeterminingCard.second = nullptr;
 }
 
 void CCardMgr::Update()
@@ -55,14 +58,37 @@ void CCardMgr::Late_Update()
 
 void CCardMgr::Render(HDC hDC)
 {
-	for (auto& cardPos : m_vecCardPosition)
-	{
-		SetPixel(hDC, cardPos.x, cardPos.y, RGB(255,0,0));
-	}
+	//for (auto& cardPos : m_vecCardPosition)
+	//{
+	//	SetPixel(hDC, cardPos.x, cardPos.y, RGB(255,0,0));
+	//}
 
 }
 
 void CCardMgr::Release()
 {
 
+}
+
+bool CCardMgr::IsPair()
+{
+	if (m_pDeterminingCard.first != nullptr && m_pDeterminingCard.second != nullptr)
+	{
+		if (m_pDeterminingCard.first->Get_Type() == m_pDeterminingCard.second->Get_Type())
+		{
+			m_pDeterminingCard.first = nullptr;
+			m_pDeterminingCard.second = nullptr;
+			m_iPairCnt++;
+			return true;
+		}
+		else
+		{
+			m_pDeterminingCard.first->Card_Open(false);
+			m_pDeterminingCard.second->Card_Open(false);
+			m_pDeterminingCard.first = nullptr;
+			m_pDeterminingCard.second = nullptr;
+			return false;
+		}
+	}
+	return false;
 }

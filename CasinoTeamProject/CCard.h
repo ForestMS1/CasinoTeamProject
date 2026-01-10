@@ -18,8 +18,14 @@ public:
     void Release() override;
 
 public:
-    void Card_Open(bool _isOpen)                { m_bIsOpen = _isOpen; }
+    void Card_Open(bool _isOpen)                
+    { 
+        m_bIsOpen = _isOpen; 
+        //if(_isOpen == false)
+           // m_bFlipComplete = false; 
+    }
     void Set_Index(int _index)                  { m_iIndex = _index; }
+    CARDTYPE Get_Type() const                   { return m_eType; }
 
 private:
     bool                        m_bIsOpen;  // false¸é µÞ¸é, true¸é ¾Õ¸é

@@ -134,8 +134,8 @@ int CCard::Update()
         // 회전 행렬 구하기
         D3DXMATRIX matRotate;
         D3DXMatrixIdentity(&matRotate);
-        m_fFlipAngle += 5.f;
-        D3DXMatrixRotationY(&matRotate, D3DXToRadian(5.f));
+        m_fFlipAngle += 3.f;
+        D3DXMatrixRotationY(&matRotate, D3DXToRadian(3.f));
 
         // 원점, 복귀 이동행렬 구하기
         D3DXMATRIX matGoOrigin, matGoPrev;
@@ -152,8 +152,12 @@ int CCard::Update()
             D3DXVec3TransformCoord(&vertex, &vertex, &matGoPrev);
         }
 
-        if (m_fFlipAngle >= 180.f)
+        if (m_fFlipAngle > 180)
+        {
             m_bFlipComplete = true;
+            GETSINGLE(CCardMgr)->Set_DeterminingCard(this);
+            GETSINGLE(CCardMgr)->IsPair();
+        }
     }
     return 0;
 }
@@ -171,14 +175,14 @@ void CCard::Late_Update()
         if (PtInRect(&m_tRect, ptMouse))
         {
             m_bIsOpen = true;
+            m_bFlipComplete = false;
+            m_fFlipAngle = 0.f;
         }
     }
 }
 
 void CCard::Render(HDC hDC)
 {
-    __super::Draw_Vertex(hDC);
-
     LPCSTR CardType = "card";
     switch (m_eType)
     {
@@ -213,8 +217,15 @@ void CCard::Render(HDC hDC)
         CardType = "card";
         break;
     }
-    if(m_bIsOpen)
+    if (!m_bIsOpen)
+    {
+        __super::Draw_Vertex_Color(hDC, 0 , 0, 0);
+    }
+    else
+    {
+        __super::Draw_Vertex_Color(hDC, 255, 0, 0);
         TextOutA(hDC, m_tRect.left, m_tRect.top, CardType, lstrlenA(CardType));
+    }
 }
 
 void CCard::Release()
