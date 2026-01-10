@@ -5,6 +5,7 @@
 #include "CObjMgr.h"
 #include "CKeyMgr.h"
 #include "CCollisionMgr.h"
+#include "CSceneSlotMachine.h"
 
 CMainGame::CMainGame() : m_iFps(0), m_dwLastTime(GetTickCount())
 {
@@ -26,12 +27,13 @@ void CMainGame::Initialize()
 
 
 	// 씬매니저에 씬 등록
-	CScene* pScene = new CTitleScene;
-	GETSINGLE(CSceneMgr)->CreateScene(L"Title", pScene);
+	//CScene* pScene = new CTitleScene;
+	CScene* pScene = new CSceneSlotMachine;
+	GETSINGLE(CSceneMgr)->CreateScene(L"RopeJump", pScene);
 
 
 	// 처음 보여줄 씬으로 전환
-	GETSINGLE(CSceneMgr)->ChangeScene(L"Title");
+	GETSINGLE(CSceneMgr)->ChangeScene(L"RopeJump");
 
 	GETSINGLE(CObjMgr)->Initialize();
 }
@@ -91,7 +93,7 @@ void CMainGame::Release()
 	CSceneMgr::Destroy_Instance();
 	CObjMgr::Destroy_Instance();
 	CKeyMgr::Destroy_Instance();
-
+	
 
 	ReleaseDC(g_hWnd, m_hDC);
 	ReleaseDC(g_hWnd, m_hBackDC);

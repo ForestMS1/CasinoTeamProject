@@ -38,7 +38,7 @@ public:										\
 #define	OBJ_NOEVENT 0
 #define	OBJ_DEAD    1
 #define VK_MAX		0xff
-enum OBJ_LAYER { OBJ_PLAYER, OBJ_EFFECT, OBJ_ITEM, OBJ_END };
+enum OBJ_LAYER { OBJ_PLAYER, OBJ_EFFECT, OBJ_ITEM, OBJ_ROLLING, OBJ_ROPE, OBJ_END };
 enum RENDERID { BACK, GAMEOBJECT, BULLET, PLAYER, EFFECT, UI, RENDER_END };
 #pragma region SafeDelete
 template<typename T>

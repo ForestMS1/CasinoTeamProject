@@ -92,3 +92,40 @@ void CCollisionMgr::Collision_Circle(list<CObj*> _Dst, list<CObj*> _Src)
 		}
 	}
 }
+
+void CCollisionMgr::Collision_Rope(CObj* pDst, CObj* pSrc)
+{
+	float fPlayerYCheck(0.f), fRopeYCheck(0.f), fPlayerDistance(0.f), fRopeDistance(0.f);
+	D3DXMATRIX  matRopeWorld;
+	D3DXVECTOR3 vRope, vOriginRope;
+	
+	//Rope의 vector값을 담기 위함
+	ZeroMemory(&vRope, sizeof(vRope));
+	ZeroMemory(&vOriginRope, sizeof(vOriginRope));
+
+	//Rope 원점 돌리기
+	vOriginRope = { 0.f , WINCY / 2,0.f };
+	vOriginRope -= { 0.f ,WINCY - WINCY / 2 - 50 ,0.f};
+
+	//Rope X축 반영된 월드 좌표 가져오기
+	matRopeWorld = pDst->Get_Info().matWorld;
+	
+	//슛
+	D3DXVec3TransformCoord(&vRope,  &vOriginRope,  &matRopeWorld);
+
+	//Player는 로컬 좌표로
+	fPlayerYCheck = pSrc->Get_Info().vPos.y;
+	fRopeYCheck =   vRope.y;
+
+	//대충 보정 값 때려 맞추기
+	fPlayerDistance = fabsf(fPlayerYCheck - (WINCY / 2 + 25) );
+	fRopeDistance   = fabsf(fRopeYCheck   - (WINCY / 2 + 45) );
+	
+	//일점 범위 높이 편차값으로 Player 밀어내기
+	if (fRopeDistance <= 10 && fPlayerDistance <= fRopeDistance && pSrc->Get_LineCheck())
+		pSrc->Set_Hit();
+
+	//줄 넘으면 점수추가
+	if (fRopeDistance <= 10 && pSrc->Get_Jump())
+		pSrc->Set_Score();
+}
