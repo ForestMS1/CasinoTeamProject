@@ -53,9 +53,6 @@ protected:
 	
 	
 	float		m_fSpeed;
-	float		m_fScale;
-
-	float	  m_fAngle;
 
 	//��������
 	RENDERID	m_eRender;

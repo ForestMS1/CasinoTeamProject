@@ -138,6 +138,15 @@
     <ClInclude Include="CCollisionMgr.h">
       <Filter>Manager\CollisionMgr</Filter>
     </ClInclude>
+    <ClInclude Include="CCointoss.h">
+      <Filter>Scene\CointossScene</Filter>
+    </ClInclude>
+    <ClInclude Include="CCoin.h">
+      <Filter>Object\HoYoungObject</Filter>
+    </ClInclude>
+    <ClInclude Include="CDuplex.h">
+      <Filter>Object\HoYoungObject\CDuplex</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CasinoTeamProject.cpp">
@@ -167,8 +176,14 @@
     <ClCompile Include="CKeyMgr.cpp">
       <Filter>Manager\KeyMgr</Filter>
     </ClCompile>
-    <ClCompile Include="CCollisionMgr.cpp">
-      <Filter>Manager\CollisionMgr</Filter>
+    <ClCompile Include="CCointoss.cpp">
+      <Filter>Scene\CointossScene</Filter>
+    </ClCompile>
+    <ClCompile Include="CCoin.cpp">
+      <Filter>Object\HoYoungObject</Filter>
+    </ClCompile>
+    <ClCompile Include="CDuplex.cpp">
+      <Filter>Object\HoYoungObject\CDuplex</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
