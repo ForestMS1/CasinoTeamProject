@@ -36,7 +36,7 @@ int CLineShoot::Update()
     
     if (m_tInfo.vPos.y <= WINCY - 200)
     {
-        m_tInfo.vPos = m_vCurLinePos;
+        m_tInfo.vPos.y = m_vCurLinePos.y;
     }
     
     if (!m_bClick && m_bPull)

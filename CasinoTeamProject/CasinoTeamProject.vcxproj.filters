@@ -255,6 +255,18 @@
     <ClInclude Include="CGoTitleBtn.h">
       <Filter>Object\GoTitleBtn</Filter>
     </ClInclude>
+    <ClInclude Include="CDuplex.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="CScene.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="CSceneMgr.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="CPosinShoot.h">
+      <Filter>Object\LineShot</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CasinoTeamProject.cpp">
@@ -347,6 +359,8 @@
     <ClCompile Include="CCointoss.cpp">
       <Filter>Object\Coin</Filter>
     </ClCompile>
+    <ClCompile Include="CPosinShoot.cpp">
+      <Filter>Object\LineShot</Filter>
     <ClCompile Include="CMainGame.cpp">
       <Filter>MainGame</Filter>
     </ClCompile>
