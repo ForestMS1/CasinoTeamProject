@@ -23,6 +23,9 @@ void CCointoss::Initialize()
 
   pButton2 = new CButton2;
   GETSINGLE(CObjMgr)->AddObject(OBJ_EFFECT, pButton2);
+
+  __super::Initialize();
+  GETSINGLE(CObjMgr)->Initialize();
 }
 
 int CCointoss::Update()
@@ -49,6 +52,7 @@ int CCointoss::Update()
 
 void CCointoss::Late_Update()
 {
+    __super::Late_Update();
 }
 
 void CCointoss::Render(HDC hDC)
