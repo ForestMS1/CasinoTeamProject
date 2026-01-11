@@ -91,8 +91,20 @@
     <Filter Include="Scene\CointossScene">
       <UniqueIdentifier>{cfe0ba60-b945-4ba1-a952-1c0d8c1a74e8}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Object\HoYoungObject">
-      <UniqueIdentifier>{aa7f7591-3da4-4081-9d2b-59f423aab685}</UniqueIdentifier>
+    <Filter Include="Scene\HO_Scene">
+      <UniqueIdentifier>{28843c7f-0c07-4f1b-b940-5cbe649a8f3a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\HO_Scene\CoinTossScene">
+      <UniqueIdentifier>{f683bf05-23ac-4f06-9081-fe70347a1d06}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\HO_Object">
+      <UniqueIdentifier>{a4b2b00e-4f80-4ceb-afa5-1257c0afa72a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\HO_Object\Coin">
+      <UniqueIdentifier>{6ddfe78b-b153-4ca4-8fee-1a4c2aada8cc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\HO_Object\Button">
+      <UniqueIdentifier>{3887eea7-6838-4785-8ac6-818c22a93801}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -142,10 +154,25 @@
       <Filter>Scene\CointossScene</Filter>
     </ClInclude>
     <ClInclude Include="CCoin.h">
-      <Filter>Object\HoYoungObject</Filter>
+      <Filter>Object\HO_Object\Coin</Filter>
     </ClInclude>
     <ClInclude Include="CDuplex.h">
-      <Filter>Object\HoYoungObject\CDuplex</Filter>
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="CScene.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="CSceneMgr.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="CCointoss.h">
+      <Filter>Scene\HO_Scene\CoinTossScene</Filter>
+    </ClInclude>
+    <ClInclude Include="CButton.h">
+      <Filter>Object\HO_Object\Button</Filter>
+    </ClInclude>
+    <ClInclude Include="CButton2.h">
+      <Filter>Object\HO_Object\Button</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -180,8 +207,25 @@
       <Filter>Scene\CointossScene</Filter>
     </ClCompile>
     <ClCompile Include="CCoin.cpp">
-      <Filter>Object\HoYoungObject</Filter>
+      <Filter>Object\HO_Object\Coin</Filter>
     </ClCompile>
+    <ClCompile Include="CDuplex.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="CScene.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="CSceneMgr.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="CCointoss.cpp">
+      <Filter>Scene\HO_Scene\CoinTossScene</Filter>
+    </ClCompile>
+    <ClCompile Include="CButton.cpp">
+      <Filter>Object\HO_Object\Button</Filter>
+    </ClCompile>
+    <ClCompile Include="CButton2.cpp">
+      <Filter>Object\HO_Object\Button</Filter>
     <ClCompile Include="CDuplex.cpp">
       <Filter>Object\HoYoungObject\CDuplex</Filter>
     </ClCompile>

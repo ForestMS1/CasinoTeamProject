@@ -4,7 +4,7 @@ class CCoin :  public CObj
 {
 public:
   CCoin();
-  ~CCoin();
+  virtual ~CCoin();
 public:
   // CObj을(를) 통해 상속됨
   void Initialize() override;
@@ -12,16 +12,19 @@ public:
   void Late_Update() override;
   void Render(HDC hDC) override;
   void Release() override;
-
+  bool Get_Arrive() { return m_bArrive; }
 private:
   float m_fAngle;
   bool  m_isMove;
   bool  m_bisTop;
+  bool  m_bArrive;
 
-  D3DXVECTOR3 vLocal[4];
+  const int SEGMENT = 32;
+
+  vector<D3DXVECTOR3> vLocal;
   D3DXVECTOR3 vWorld;
 
-  POINT tPoints[4];
+  POINT tPoints[32];
   POINT m_SawPoints[6] ;
 };
 
