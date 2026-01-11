@@ -1,6 +1,7 @@
 #pragma once
 #include "CObjMgr.h"
 #include "CAbstractFactory.h"
+#include "CGoTitleBtn.h"
 class CScene
 {
 public:
@@ -14,6 +15,7 @@ public:
 	virtual void Release()				PURE;
 
 private:
+	CGoTitleBtn* pBtn;
 
 };
 

@@ -154,6 +154,7 @@
     <ClInclude Include="CCollisionMgr.h" />
     <ClInclude Include="CDuplex.h" />
     <ClInclude Include="CFirstPerson.h" />
+    <ClInclude Include="CGoTitleBtn.h" />
     <ClInclude Include="CITemSquare.h" />
     <ClInclude Include="CITemTriangle.h" />
     <ClInclude Include="CKeyMgr.h" />
@@ -202,6 +203,7 @@
     <ClCompile Include="CCollisionMgr.cpp" />
     <ClCompile Include="CDuplex.cpp" />
     <ClCompile Include="CFirstPerson.cpp" />
+    <ClCompile Include="CGoTitleBtn.cpp" />
     <ClCompile Include="CITemSquare.cpp" />
     <ClCompile Include="CITemTriangle.cpp" />
     <ClCompile Include="CKeyMgr.cpp" />

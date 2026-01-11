@@ -106,6 +106,9 @@
     <Filter Include="Object\SceneSelectBtn">
       <UniqueIdentifier>{56a4e73d-d446-44fa-adca-b0951281469e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Object\GoTitleBtn">
+      <UniqueIdentifier>{cda7899f-18e3-4fa6-ae99-8bea365d66b9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -180,9 +183,6 @@
     <ClInclude Include="CRRPlayer.h">
       <Filter>Object\Revolver\RRPlayer</Filter>
     </ClInclude>
-    <ClInclude Include="CCointoss.h">
-      <Filter>Scene\HO_Scene\CoinTossScene</Filter>
-    </ClInclude>
     <ClInclude Include="CButton.h">
       <Filter>Object\HO_Object\Button</Filter>
     </ClInclude>
@@ -197,9 +197,6 @@
     </ClInclude>
     <ClInclude Include="CSceneLineShoot.h">
       <Filter>Scene</Filter>
-    </ClInclude>
-    <ClInclude Include="CCoin.h">
-      <Filter>Object\Coin</Filter>
     </ClInclude>
     <ClInclude Include="CCointoss.h">
       <Filter>Object\Coin</Filter>
@@ -254,6 +251,9 @@
     </ClInclude>
     <ClInclude Include="CSceneSelectBtn.h">
       <Filter>Object\SceneSelectBtn</Filter>
+    </ClInclude>
+    <ClInclude Include="CGoTitleBtn.h">
+      <Filter>Object\GoTitleBtn</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -322,9 +322,6 @@
     </ClCompile>
     <ClCompile Include="CButton2.cpp">
       <Filter>Object\HO_Object\Button</Filter>
-    </ClCompile>
-    <ClCompile Include="CDuplex.cpp">
-      <Filter>Object\HoYoungObject\CDuplex</Filter>
     </ClCompile>
     <ClCompile Include="CSceneMgr.cpp">
       <Filter>소스 파일</Filter>
@@ -406,6 +403,12 @@
     </ClCompile>
     <ClCompile Include="CSceneSelectBtn.cpp">
       <Filter>Object\SceneSelectBtn</Filter>
+    </ClCompile>
+    <ClCompile Include="CDuplex.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="CGoTitleBtn.cpp">
+      <Filter>Object\GoTitleBtn</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -27,7 +27,7 @@ void CSceneSlotMachine::Initialize()
 
     GETSINGLE(CObjMgr)->AddObject(OBJ_PLAYER, CAbstractFactory<CPlayerR>::Create());
     GETSINGLE(CObjMgr)->AddObject(OBJ_ROPE, CAbstractFactory<CRope>::Create());
-
+    __super::Initialize();
 }
 
 int CSceneSlotMachine::Update()
@@ -42,6 +42,7 @@ int CSceneSlotMachine::Update()
 void CSceneSlotMachine::Late_Update()
 {
     CCollisionMgr::Collision_Rope(GETSINGLE(CObjMgr)->GetObjLayer(OBJ_ROPE).front(), GETSINGLE(CObjMgr)->GetObjLayer(OBJ_PLAYER).front());
+    __super::Late_Update();
 }
 
 void CSceneSlotMachine::Render(HDC hDC)
@@ -54,4 +55,5 @@ void CSceneSlotMachine::Release()
     GETSINGLE(CObjMgr)->DeleteLayerObj(OBJ_PLAYER);
     GETSINGLE(CObjMgr)->DeleteLayerObj(OBJ_ROLLING);
     GETSINGLE(CObjMgr)->DeleteLayerObj(OBJ_ROPE);
+    GETSINGLE(CObjMgr)->DeleteAllLayer();
 }

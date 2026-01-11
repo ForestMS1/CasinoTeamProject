@@ -21,6 +21,7 @@ void CCointoss::Initialize()
   CButton2* pButton2 = new CButton2;
   GETSINGLE(CObjMgr)->AddObject(OBJ_EFFECT, pButton2);
 
+  GETSINGLE(CObjMgr)->Initialize();
 }
 
 int CCointoss::Update()

@@ -18,6 +18,7 @@ void CSceneLineShoot::Initialize()
 {
     GETSINGLE(CObjMgr)->AddObject(OBJ_LINE, CAbstractFactory<CLineShoot>::Create());
     GETSINGLE(CObjMgr)->AddObject(OBJ_PLAYER, CAbstractFactory<CPlayerL>::Create());
+    __super::Initialize();
 }
 
 int CSceneLineShoot::Update()
@@ -31,6 +32,7 @@ int CSceneLineShoot::Update()
 
 void CSceneLineShoot::Late_Update()
 {
+    __super::Late_Update();
 }
 
 void CSceneLineShoot::Render(HDC hDC)
