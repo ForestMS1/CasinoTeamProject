@@ -5,13 +5,15 @@
 #include "CButton.h"
 #include "CButton2.h"
 
+
 class CCointoss : public CScene
 {
 public:
   CCointoss();
   virtual ~CCointoss();
+
 public:
-  // CSceneÀ»(¸¦) ÅëÇØ »ó¼ÓµÊ
+  // CSceneÃ€Â»(Â¸Â¦) Ã…Ã«Ã‡Ã˜ Â»Ã³Â¼Ã“ÂµÃŠ
   void Initialize() override;
   int Update() override;
   void Late_Update() override;

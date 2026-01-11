@@ -23,6 +23,7 @@ public:
 	void			Set_Dead()								{ m_bIsDead = true; }
 	void			Set_Hit()								{ m_bHit = true; }
 	void			Set_Score()								{ m_bScore = true; }
+	void			Set_Target(CObj* pTarget)				{ m_pTarget = pTarget; }
 	void Draw_Vertex(HDC hDC);
 	void Draw_Vertex_Color(HDC hDC, float _r, float _g, float _b);
 public:
@@ -51,8 +52,11 @@ protected:
 	
 	INFO		m_tInfo;
 	
-	
+	CObj*		m_pTarget;
 	float		m_fSpeed;
+
+	float		m_fScale;
+	float		m_fAngle;
 
 	//��������
 	RENDERID	m_eRender;

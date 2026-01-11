@@ -7,12 +7,10 @@
 #include "CObjMgr.h"
 #include "CKeyMgr.h"
 #include "CCollisionMgr.h"
-<<<<<<< HEAD
 #include "CCointoss.h"
-=======
 #include "CSceneSlotMachine.h"
 #include "CLineMgr.h"
->>>>>>> master
+#include "CSceneLineShoot.h"
 
 CMainGame::CMainGame() : m_iFps(0), m_dwLastTime(GetTickCount())
 {
@@ -33,30 +31,33 @@ void CMainGame::Initialize()
 	DeleteObject(hBit);
 
 
-<<<<<<< HEAD
-	// ���Ŵ����� �� ���
+
+	// ���Ŵ����� �� ���
 	CScene* pScene = new CTitleScene;
 	GETSINGLE(CSceneMgr)->CreateScene(L"Title", pScene);
+  
 	CScene* pScene2 = new CCointoss;
 	GETSINGLE(CSceneMgr)->CreateScene(L"Coin", pScene2);
 
-	// ó�� ������ ������ ��ȯ
-	GETSINGLE(CSceneMgr)->ChangeScene(L"Coin");
-=======
-	// ?�매?��??????�록
-	//CScene* pScene = new CTitleScene;
-	CScene* pScene = new CSceneSlotMachine;
+  pScene = new CSceneSlotMachine;
 	GETSINGLE(CSceneMgr)->CreateScene(L"RopeJump", pScene);
+
+	pScene = new CSceneLineShoot;
+	GETSINGLE(CSceneMgr)->CreateScene(L"LineShoot", pScene);
 
 	pScene = new CRussianRoulletScene;
 	GETSINGLE(CSceneMgr)->CreateScene(L"RussianRoullet", pScene);
 
 	pScene = new CCardPairScene;
 	GETSINGLE(CSceneMgr)->CreateScene(L"CardPairScene", pScene);
+	
+	pScene = new CCointoss;
+	GETSINGLE(CSceneMgr)->CreateScene(L"CoinScene", pScene);
 
-	GETSINGLE(CSceneMgr)->ChangeScene(L"RussianRoullet");
+	
+	//GETSINGLE(CSceneMgr)->ChangeScene(L"RussianRoullet");
 
->>>>>>> master
+	GETSINGLE(CSceneMgr)->ChangeScene(L"CardPairScene");
 	GETSINGLE(CObjMgr)->Initialize();
 }
 
@@ -72,11 +73,11 @@ void CMainGame::Late_Update()
 	GETSINGLE(CKeyMgr)->Late_Update();
 	GETSINGLE(CObjMgr)->Late_Update();
 
-	// 충돌 처리 ?�시 (?�래처럼 추�??�면 ?�니??)
+	// 충돌 처리 ?�시 (?�래처럼 추�??�면 ?�니??)
 	//if (!GETSINGLE(CObjMgr)->GetObjLayer(OBJ_PLAYER).empty())
 	//{
 	//	CCollisionMgr::Collision_RectEx(GETSINGLE(CObjMgr)->GetObjLayer(OBJ_PLAYER), GETSINGLE(CObjMgr)->GetObjLayer(OBJ_ITEM));
-	//	TODO : 충돌처리 추�?
+	//	TODO : 충돌처리 추�?
 	//}
 }
 
@@ -101,17 +102,17 @@ void CMainGame::Render()
 	BitBlt(m_hDC,				// 복사 받을 DC
 		0,						// 복사 받을 공간??LEFT	
 		0,						// 복사 받을 공간??TOP
-		WINCX,					// 복사 받을 공간??가�?
-		WINCY,					// 복사 받을 공간???�로 
+		WINCX,					// 복사 받을 공간??가�?
+		WINCY,					// 복사 받을 공간???�로 
 		m_hBackDC,				// 복사 ??DC
-		0,						// 복사???��?지??LEFT, TOP
+		0,						// 복사???��?지??LEFT, TOP
 		0,
-		SRCCOPY);				// 그�?�?복사
+		SRCCOPY);				// 그�?�?복사
 }
 
 void CMainGame::Release()
 {
-	// 매니?�????��
+	// 매니?�????��
 	CSceneMgr::Destroy_Instance();
 	CObjMgr::Destroy_Instance();
 	CKeyMgr::Destroy_Instance();

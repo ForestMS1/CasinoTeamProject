@@ -4,15 +4,19 @@ class CCoin :  public CObj
 {
 public:
   CCoin();
+
   virtual ~CCoin();
+
 public:
-  // CObjÀ»(¸¦) ÅëÇØ »ó¼ÓµÊ
+  // CObjÃ€Â»(Â¸Â¦) Ã…Ã«Ã‡Ã˜ Â»Ã³Â¼Ã“ÂµÃŠ
   void Initialize() override;
   int Update() override;
   void Late_Update() override;
   void Render(HDC hDC) override;
   void Release() override;
+
   bool Get_Arrive() { return m_bArrive; }
+
 private:
   float m_fAngle;
   bool  m_isMove;

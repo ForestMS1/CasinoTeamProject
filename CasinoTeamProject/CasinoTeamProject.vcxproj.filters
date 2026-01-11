@@ -48,7 +48,7 @@
     </Filter>
     <Filter Include="Object\LineJump">
       <UniqueIdentifier>{58b757e0-8e82-4adb-a4ad-4c03e5709cb2}</UniqueIdentifier>
-	</Filter>
+    </Filter>
     <Filter Include="Design">
       <UniqueIdentifier>{72464302-974f-46fa-81a3-ca906350086d}</UniqueIdentifier>
     </Filter>
@@ -106,6 +106,12 @@
     <Filter Include="Object\HO_Object\Button">
       <UniqueIdentifier>{3887eea7-6838-4785-8ac6-818c22a93801}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Object\LineShot">
+      <UniqueIdentifier>{c11ced54-e92b-4b62-a56a-a5cfdbe97731}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\Coin">
+      <UniqueIdentifier>{6ddfe78b-b153-4ca4-8fee-1a4c2aada8cc}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -156,8 +162,44 @@
     <ClInclude Include="CCoin.h">
       <Filter>Object\HO_Object\Coin</Filter>
     </ClInclude>
+
     <ClInclude Include="CDuplex.h">
       <Filter>헤더 파일</Filter>
+    <ClInclude Include="CSecondPerson.h">
+      <Filter>Object\LineJump</Filter>
+    </ClInclude>
+    <ClInclude Include="CRope.h">
+      <Filter>Object\LineJump</Filter>
+    </ClInclude>
+    <ClInclude Include="CRopeDot.h">
+      <Filter>Object\LineJump</Filter>
+    </ClInclude>
+    <ClInclude Include="CRopeLine.h">
+      <Filter>Object\LineJump</Filter>
+    </ClInclude>
+    <ClInclude Include="CPlayerR.h">
+      <Filter>Object\LineJump</Filter>
+    </ClInclude>
+    <ClInclude Include="CAbstractFactory.h">
+      <Filter>Design\AbstractFactory</Filter>
+    </ClInclude>
+    <ClInclude Include="CLineMgr.h">
+      <Filter>Manager\LineMgr</Filter>
+    </ClInclude>
+    <ClInclude Include="CLine.h">
+      <Filter>Manager\LineMgr\Line</Filter>
+    </ClInclude>
+    <ClInclude Include="CRussianRoulletScene.h">
+      <Filter>Scene\RussianRoulletScene</Filter>
+    </ClInclude>
+    <ClInclude Include="CRevolver.h">
+      <Filter>Object\Revolver</Filter>
+    </ClInclude>
+    <ClInclude Include="CBullet.h">
+      <Filter>Object\Revolver\Bullet</Filter>
+    </ClInclude>
+    <ClInclude Include="CRRPlayer.h">
+      <Filter>Object\Revolver\RRPlayer</Filter>
     </ClInclude>
     <ClInclude Include="CScene.h">
       <Filter>헤더 파일</Filter>
@@ -173,6 +215,39 @@
     </ClInclude>
     <ClInclude Include="CButton2.h">
       <Filter>Object\HO_Object\Button</Filter>
+    </ClInclude>
+    <ClInclude Include="CScene.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="CSceneMgr.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="CScene.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="CSceneMgr.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="CLineShoot.h">
+      <Filter>Object\LineShot</Filter>
+    </ClInclude>
+    <ClInclude Include="CPlayerL.h">
+      <Filter>Object\LineShot</Filter>
+    </ClInclude>
+    <ClInclude Include="CSceneLineShoot.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="CScene.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="CSceneMgr.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="CCoin.h">
+      <Filter>Object\Coin</Filter>
+    </ClInclude>
+    <ClInclude Include="CCointoss.h">
+      <Filter>Object\Coin</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -211,6 +286,32 @@
     </ClCompile>
     <ClCompile Include="CDuplex.cpp">
       <Filter>소스 파일</Filter>
+    <ClCompile Include="CRopeLine.cpp">
+      <Filter>Object\LineJump</Filter>
+    </ClCompile>
+    <ClCompile Include="CPlayerR.cpp">
+      <Filter>Object\LineJump</Filter>
+    </ClCompile>
+    <ClCompile Include="CAbstractFactory.cpp">
+      <Filter>Design\AbstractFactory</Filter>
+    </ClCompile>
+    <ClCompile Include="CLineMgr.cpp">
+      <Filter>Manager\LineMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="CLine.cpp">
+      <Filter>Manager\LineMgr\Line</Filter>
+    </ClCompile>
+    <ClCompile Include="CRussianRoulletScene.cpp">
+      <Filter>Scene\RussianRoulletScene</Filter>
+    </ClCompile>
+    <ClCompile Include="CRevolver.cpp">
+      <Filter>Object\Revolver</Filter>
+    </ClCompile>
+    <ClCompile Include="CBullet.cpp">
+      <Filter>Object\Revolver\Bullet</Filter>
+    </ClCompile>
+    <ClCompile Include="CRRPlayer.cpp">
+      <Filter>Object\Revolver\RRPlayer</Filter>
     </ClCompile>
     <ClCompile Include="CScene.cpp">
       <Filter>소스 파일</Filter>
@@ -228,6 +329,39 @@
       <Filter>Object\HO_Object\Button</Filter>
     <ClCompile Include="CDuplex.cpp">
       <Filter>Object\HoYoungObject\CDuplex</Filter>
+    </ClCompile>
+    <ClCompile Include="CScene.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="CSceneMgr.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="CScene.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="CSceneMgr.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="CLineShoot.cpp">
+      <Filter>Object\LineShot</Filter>
+    </ClCompile>
+    <ClCompile Include="CPlayerL.cpp">
+      <Filter>Object\LineShot</Filter>
+    </ClCompile>
+    <ClCompile Include="CSceneLineShoot.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="CScene.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="CSceneMgr.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="CCoin.cpp">
+      <Filter>Object\Coin</Filter>
+    </ClCompile>
+    <ClCompile Include="CCointoss.cpp">
+      <Filter>Object\Coin</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

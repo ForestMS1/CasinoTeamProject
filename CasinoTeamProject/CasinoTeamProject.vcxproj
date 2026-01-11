@@ -153,19 +153,29 @@
     <ClInclude Include="CCard.h" />
     <ClInclude Include="CCardMgr.h" />
     <ClInclude Include="CCardPairScene.h" />
+    <ClInclude Include="CCoin.h" />
+    <ClInclude Include="CCointoss.h" />
     <ClInclude Include="CCollisionMgr.h" />
+
+    <ClInclude Include="CDuplex.h" />
+    <ClInclude Include="CFirstPerson.h" />
+    <ClInclude Include="CITemSquare.h" />
+    <ClInclude Include="CITemTriangle.h" />
     <ClInclude Include="CKeyMgr.h" />
     <ClInclude Include="CLine.h" />
     <ClInclude Include="CLineMgr.h" />
+    <ClInclude Include="CLineShoot.h" />
     <ClInclude Include="CMagazine.h" />
     <ClInclude Include="CMainGame.h" />
     <ClInclude Include="CObj.h" />
     <ClInclude Include="CObjMgr.h" />
+    <ClInclude Include="CPlayerL.h" />
     <ClInclude Include="CPlayerR.h" />
     <ClInclude Include="CRope.h" />
     <ClInclude Include="CRopeDot.h" />
     <ClInclude Include="CRopeLine.h" />
     <ClInclude Include="CScene.h" />
+    <ClInclude Include="CSceneLineShoot.h" />
     <ClInclude Include="CSceneMgr.h" />
     <ClInclude Include="CSceneSlotMachine.h" />
     <ClInclude Include="CSecondPerson.h" />
@@ -196,18 +206,27 @@
     <ClCompile Include="CCoin.cpp" />
     <ClCompile Include="CCointoss.cpp" />
     <ClCompile Include="CCollisionMgr.cpp" />
+
+    <ClCompile Include="CDuplex.cpp" />
+    <ClCompile Include="CFirstPerson.cpp" />
+    <ClCompile Include="CITemSquare.cpp" />
+    <ClCompile Include="CITemTriangle.cpp" />
+
     <ClCompile Include="CKeyMgr.cpp" />
     <ClCompile Include="CLine.cpp" />
     <ClCompile Include="CLineMgr.cpp" />
+    <ClCompile Include="CLineShoot.cpp" />
     <ClCompile Include="CMagazine.cpp" />
     <ClCompile Include="CMainGame.cpp" />
     <ClCompile Include="CObj.cpp" />
     <ClCompile Include="CObjMgr.cpp" />
+    <ClCompile Include="CPlayerL.cpp" />
     <ClCompile Include="CPlayerR.cpp" />
     <ClCompile Include="CRope.cpp" />
     <ClCompile Include="CRopeDot.cpp" />
     <ClCompile Include="CRopeLine.cpp" />
     <ClCompile Include="CScene.cpp" />
+    <ClCompile Include="CSceneLineShoot.cpp" />
     <ClCompile Include="CSceneMgr.cpp" />
     <ClCompile Include="CSceneSlotMachine.cpp" />
     <ClCompile Include="CSecondPerson.cpp" />

@@ -23,6 +23,7 @@ void CCoin::Initialize()
 int CCoin::Update()
 {
   m_isMove = false;
+
   D3DXMATRIX matScale, matRotX, matTrans;
 
   D3DXMatrixScaling(&matScale, 1.f, 1.f, 1.f);
@@ -33,6 +34,7 @@ int CCoin::Update()
     m_tInfo.vPos.z);
 
   m_tInfo.matWorld = matScale * matRotX * matTrans;
+
 
   if (GetAsyncKeyState(VK_SPACE))
   {
@@ -48,6 +50,7 @@ int CCoin::Update()
       m_fAngle = 0.f;
       m_bisTop = false;
       m_bArrive = true;
+
     }
   }
   
@@ -66,11 +69,11 @@ void CCoin::Late_Update()
 
 void CCoin::Render(HDC hDC)
 {
-  // µ¿Àü Å©±â ¼³Á¤ (·ÎÄÃ °ø°£)
+  // ë™ì „ í¬ê¸° ì„¤ì • (ë¡œì»¬ ê³µê°„)
    // float fHalfWidth = 50.f;
    // float fHalfHeight = 8.f;
    //
-   // // ·ÎÄÃ °ø°£ÀÇ 4°³ ²ÀÁşÁ¡ (»ç°¢Çü ÂïÀ» ‹š »ç¿ëÇÏ´Â Á¡µé)
+   // // ë¡œì»¬ ê³µê°„ì˜ 4ê°œ ê¼­ì§“ì  (ì‚¬ê°í˜• ì°ì„ Â‹Âš ì‚¬ìš©í•˜ëŠ” ì ë“¤)
    // D3DXVECTOR3 vLocal[4] = {
    //   D3DXVECTOR3(-fHalfWidth, -fHalfHeight, 0.f),
    //   D3DXVECTOR3(fHalfWidth, -fHalfHeight, 0.f),
@@ -104,13 +107,13 @@ void CCoin::Render(HDC hDC)
 
     Polygon(hDC, tPoints, 32);
 
-    
+  
  // int iGap = 8;
  //
- // // tPoints[0].x (¿ŞÂÊ ³¡) ºÎÅÍ tPoints[1].x (¿À¸¥ÂÊ ³¡) ±îÁö ¹İº¹
+ // // tPoints[0].x (ì™¼ìª½ ë) ë¶€í„° tPoints[1].x (ì˜¤ë¥¸ìª½ ë) ê¹Œì§€ ë°˜ë³µ
  // for (LONG x = tPoints[0].x + iGap; x < tPoints[1].x; x += iGap)
  // {
- //   // À§ÂÊ yÁÂÇ¥(tPoints[0].y)¿¡¼­ ¾Æ·¡ÂÊ yÁÂÇ¥(tPoints[3].y)·Î ¼± ±ß±â
+ //   // ìœ„ìª½ yì¢Œí‘œ(tPoints[0].y)ì—ì„œ ì•„ë˜ìª½ yì¢Œí‘œ(tPoints[3].y)ë¡œ ì„  ê¸‹ê¸°
  //   MoveToEx(hDC, x, tPoints[0].y, nullptr);
  //   LineTo(hDC, x, tPoints[3].y);
  // }

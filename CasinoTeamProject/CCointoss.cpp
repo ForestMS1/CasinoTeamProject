@@ -11,6 +11,7 @@ CCointoss::~CCointoss()
 
 void CCointoss::Initialize()
 {
+
   CCoin* pCoin = new CCoin;
   GETSINGLE(CObjMgr)->AddObject(OBJ_PLAYER, pCoin);
 
@@ -19,6 +20,7 @@ void CCointoss::Initialize()
 
   CButton2* pButton2 = new CButton2;
   GETSINGLE(CObjMgr)->AddObject(OBJ_EFFECT, pButton2);
+
 }
 
 int CCointoss::Update()
