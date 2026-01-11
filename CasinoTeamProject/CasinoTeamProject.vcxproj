@@ -166,6 +166,7 @@
     <ClInclude Include="CObjMgr.h" />
     <ClInclude Include="CPlayerL.h" />
     <ClInclude Include="CPlayerR.h" />
+    <ClInclude Include="CPosinShoot.h" />
     <ClInclude Include="CRope.h" />
     <ClInclude Include="CRopeDot.h" />
     <ClInclude Include="CRopeLine.h" />
@@ -213,6 +214,7 @@
     <ClCompile Include="CObjMgr.cpp" />
     <ClCompile Include="CPlayerL.cpp" />
     <ClCompile Include="CPlayerR.cpp" />
+    <ClCompile Include="CPosinShoot.cpp" />
     <ClCompile Include="CRope.cpp" />
     <ClCompile Include="CRopeDot.cpp" />
     <ClCompile Include="CRopeLine.cpp" />

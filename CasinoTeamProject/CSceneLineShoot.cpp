@@ -6,6 +6,7 @@
 #include "CAbstractFactory.h"
 #include "CObjMgr.h"
 #include "CLineShoot.h"
+#include "CPosinShoot.h"
 CSceneLineShoot::CSceneLineShoot()
 {
 }
@@ -18,6 +19,8 @@ void CSceneLineShoot::Initialize()
 {
     GETSINGLE(CObjMgr)->AddObject(OBJ_LINE, CAbstractFactory<CLineShoot>::Create());
     GETSINGLE(CObjMgr)->AddObject(OBJ_PLAYER, CAbstractFactory<CPlayerL>::Create());
+    GETSINGLE(CObjMgr)->AddObject(OBJ_MONSTER, CAbstractFactory<CPosinShoot>::Create());
+
 }
 
 int CSceneLineShoot::Update()
