@@ -35,9 +35,6 @@ void CMainGame::Initialize()
 	// ���Ŵ����� �� ���
 	CScene* pScene = new CTitleScene;
 	GETSINGLE(CSceneMgr)->CreateScene(L"Title", pScene);
-  
-	CScene* pScene2 = new CCointoss;
-	GETSINGLE(CSceneMgr)->CreateScene(L"Coin", pScene2);
 
   pScene = new CSceneSlotMachine;
 	GETSINGLE(CSceneMgr)->CreateScene(L"RopeJump", pScene);

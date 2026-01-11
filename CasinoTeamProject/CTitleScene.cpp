@@ -24,7 +24,7 @@ void CTitleScene::Initialize()
 	//CTestCube* testCube = new CTestCube;
 	//GETSINGLE(CObjMgr)->AddObject(OBJ_PLAYER, testCube);
 
-	CSceneSelectBtn* pSelectBtn = new CSceneSelectBtn(L"Coin");
+	CSceneSelectBtn* pSelectBtn = new CSceneSelectBtn(L"CoinScene");
 	pSelectBtn->Set_Pos(100.f, 100.f, 0.f);
 	pSelectBtn->Initialize();
 	GETSINGLE(CObjMgr)->AddObject(OBJ_ITEM, pSelectBtn);
@@ -48,12 +48,6 @@ void CTitleScene::Initialize()
 	pSelectBtn->Set_Pos(300.f, 200.f, 0.f);
 	pSelectBtn->Initialize();
 	GETSINGLE(CObjMgr)->AddObject(OBJ_ITEM, pSelectBtn);
-
-	pSelectBtn = new CSceneSelectBtn(L"CoinScene");
-	pSelectBtn->Set_Pos(500.f, 200.f, 0.f);
-	pSelectBtn->Initialize();
-	GETSINGLE(CObjMgr)->AddObject(OBJ_ITEM, pSelectBtn);
-
 
 }
 
