@@ -3,9 +3,9 @@
 
 CCointoss::CCointoss() 
   : m_isDead(false)
-, pButton2(nullptr)
-, pButton(nullptr)
-, pCoin(nullptr)
+, pButton2  (nullptr)
+, pButton   (nullptr)
+, pCoin     (nullptr)
 {
 }
 
@@ -15,7 +15,6 @@ CCointoss::~CCointoss()
 
 void CCointoss::Initialize()
 {
-
   pCoin = new CCoin;
   GETSINGLE(CObjMgr)->AddObject(OBJ_PLAYER, pCoin);
 
@@ -28,12 +27,22 @@ void CCointoss::Initialize()
 
 int CCointoss::Update()
 {
+
   float Angle = 33.f;
+  
   if (pCoin->Get_Arrive())
+    pCoin->Set_Angle(Angle);
+
+  if (pButton->Get_Clicked())
   {
+    Angle = 38.f;
     pCoin->Set_Angle(Angle);
   }
-
+  else if (pButton2->Get_Clicked())
+  {
+    Angle = 38.f;
+    pCoin->Set_Angle(Angle);
+  }
 
   return 0;
 }
@@ -44,6 +53,14 @@ void CCointoss::Late_Update()
 
 void CCointoss::Render(HDC hDC)
 {
+  //if (pButton->Get_Clicked())
+  //{
+  //  pCoin->Print_Text(hDC);
+  //}
+  //if (pButton2->Get_Clicked())
+  //{
+  //  pCoin->Print_Text(hDC);
+  //}
 }
 
 void CCointoss::Release()
