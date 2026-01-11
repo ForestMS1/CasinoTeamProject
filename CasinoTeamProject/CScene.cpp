@@ -15,7 +15,7 @@ void CScene::Initialize()
 {
 	pBtn = new CGoTitleBtn;
 	pBtn->Initialize();
-	GETSINGLE(CObjMgr)->AddObject(OBJ_EFFECT, pBtn);
+	GETSINGLE(CObjMgr)->AddObject(OBJ_BACK_BUTTON, pBtn);
 }
 
 int CScene::Update()
