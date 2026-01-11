@@ -32,7 +32,6 @@ void CMainGame::Initialize()
 
 
 
-	// ���Ŵ����� �� ���
 	CScene* pScene = new CTitleScene;
 	GETSINGLE(CSceneMgr)->CreateScene(L"Title", pScene);
   
@@ -57,7 +56,7 @@ void CMainGame::Initialize()
 	
 	//GETSINGLE(CSceneMgr)->ChangeScene(L"RussianRoullet");
 
-	GETSINGLE(CSceneMgr)->ChangeScene(L"CardPairScene");
+	GETSINGLE(CSceneMgr)->ChangeScene(L"CoinScene");
 	GETSINGLE(CObjMgr)->Initialize();
 }
 
