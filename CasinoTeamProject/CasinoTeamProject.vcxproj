@@ -172,6 +172,7 @@
     <ClInclude Include="CScene.h" />
     <ClInclude Include="CSceneLineShoot.h" />
     <ClInclude Include="CSceneMgr.h" />
+    <ClInclude Include="CSceneSelectBtn.h" />
     <ClInclude Include="CSceneSlotMachine.h" />
     <ClInclude Include="CSecondPerson.h" />
     <ClInclude Include="CSlotItem.h" />
@@ -219,6 +220,7 @@
     <ClCompile Include="CScene.cpp" />
     <ClCompile Include="CSceneLineShoot.cpp" />
     <ClCompile Include="CSceneMgr.cpp" />
+    <ClCompile Include="CSceneSelectBtn.cpp" />
     <ClCompile Include="CSceneSlotMachine.cpp" />
     <ClCompile Include="CSecondPerson.cpp" />
     <ClCompile Include="CSlotItem.cpp" />

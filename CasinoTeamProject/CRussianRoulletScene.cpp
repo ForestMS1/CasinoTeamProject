@@ -20,6 +20,8 @@ void CRussianRoulletScene::Initialize()
 {
 	CObj* pRevolver = new CRevolver;
 	CObj* pMagazine = new CMagazine;
+	pRevolver->Initialize();
+	pMagazine->Initialize();
 	GETSINGLE(CObjMgr)->AddObject(OBJ_ITEM, pRevolver);
 	GETSINGLE(CObjMgr)->AddObject(OBJ_ITEM, pMagazine);
 	GETSINGLE(CShotEventObserver)->Initialize(pRevolver, pMagazine);

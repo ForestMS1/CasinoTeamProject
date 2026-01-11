@@ -57,7 +57,7 @@ void CMainGame::Initialize()
 	
 	//GETSINGLE(CSceneMgr)->ChangeScene(L"RussianRoullet");
 
-	GETSINGLE(CSceneMgr)->ChangeScene(L"CardPairScene");
+	GETSINGLE(CSceneMgr)->ChangeScene(L"Title");
 	GETSINGLE(CObjMgr)->Initialize();
 }
 

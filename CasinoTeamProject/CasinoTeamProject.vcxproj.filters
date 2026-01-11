@@ -103,6 +103,9 @@
     <Filter Include="Object\LineShot">
       <UniqueIdentifier>{c11ced54-e92b-4b62-a56a-a5cfdbe97731}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Object\SceneSelectBtn">
+      <UniqueIdentifier>{56a4e73d-d446-44fa-adca-b0951281469e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -248,6 +251,9 @@
     </ClInclude>
     <ClInclude Include="CSceneMgr.h">
       <Filter>Manager\SceneMgr</Filter>
+    </ClInclude>
+    <ClInclude Include="CSceneSelectBtn.h">
+      <Filter>Object\SceneSelectBtn</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -397,6 +403,9 @@
     </ClCompile>
     <ClCompile Include="CRope.cpp">
       <Filter>Object\LineJump</Filter>
+    </ClCompile>
+    <ClCompile Include="CSceneSelectBtn.cpp">
+      <Filter>Object\SceneSelectBtn</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
