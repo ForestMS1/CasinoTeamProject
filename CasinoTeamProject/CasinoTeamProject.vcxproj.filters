@@ -165,6 +165,7 @@
 
     <ClInclude Include="CDuplex.h">
       <Filter>헤더 파일</Filter>
+	</ClInclude>
     <ClInclude Include="CSecondPerson.h">
       <Filter>Object\LineJump</Filter>
     </ClInclude>
@@ -201,12 +202,6 @@
     <ClInclude Include="CRRPlayer.h">
       <Filter>Object\Revolver\RRPlayer</Filter>
     </ClInclude>
-    <ClInclude Include="CScene.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="CSceneMgr.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
     <ClInclude Include="CCointoss.h">
       <Filter>Scene\HO_Scene\CoinTossScene</Filter>
     </ClInclude>
@@ -216,18 +211,6 @@
     <ClInclude Include="CButton2.h">
       <Filter>Object\HO_Object\Button</Filter>
     </ClInclude>
-    <ClInclude Include="CScene.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="CSceneMgr.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="CScene.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="CSceneMgr.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
     <ClInclude Include="CLineShoot.h">
       <Filter>Object\LineShot</Filter>
     </ClInclude>
@@ -236,12 +219,6 @@
     </ClInclude>
     <ClInclude Include="CSceneLineShoot.h">
       <Filter>Scene</Filter>
-    </ClInclude>
-    <ClInclude Include="CScene.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="CSceneMgr.h">
-      <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="CCoin.h">
       <Filter>Object\Coin</Filter>
@@ -286,6 +263,7 @@
     </ClCompile>
     <ClCompile Include="CDuplex.cpp">
       <Filter>소스 파일</Filter>
+	</ClCompile>
     <ClCompile Include="CRopeLine.cpp">
       <Filter>Object\LineJump</Filter>
     </ClCompile>
@@ -313,9 +291,6 @@
     <ClCompile Include="CRRPlayer.cpp">
       <Filter>Object\Revolver\RRPlayer</Filter>
     </ClCompile>
-    <ClCompile Include="CScene.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="CSceneMgr.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
@@ -327,16 +302,11 @@
     </ClCompile>
     <ClCompile Include="CButton2.cpp">
       <Filter>Object\HO_Object\Button</Filter>
+	</ClCompile>
     <ClCompile Include="CDuplex.cpp">
       <Filter>Object\HoYoungObject\CDuplex</Filter>
     </ClCompile>
-    <ClCompile Include="CScene.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="CSceneMgr.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="CScene.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="CSceneMgr.cpp">
@@ -350,9 +320,6 @@
     </ClCompile>
     <ClCompile Include="CSceneLineShoot.cpp">
       <Filter>Scene</Filter>
-    </ClCompile>
-    <ClCompile Include="CScene.cpp">
-      <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="CSceneMgr.cpp">
       <Filter>소스 파일</Filter>
