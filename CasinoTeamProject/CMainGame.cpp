@@ -32,7 +32,6 @@ void CMainGame::Initialize()
 
 
 
-	// ���Ŵ����� �� ���
 	CScene* pScene = new CTitleScene;
 	GETSINGLE(CSceneMgr)->CreateScene(L"Title", pScene);
 

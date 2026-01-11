@@ -151,6 +151,8 @@
     <ClInclude Include="CCard.h" />
     <ClInclude Include="CCardMgr.h" />
     <ClInclude Include="CCardPairScene.h" />
+    <ClInclude Include="CCoin.h" />
+    <ClInclude Include="CCointoss.h" />
     <ClInclude Include="CCollisionMgr.h" />
     <ClInclude Include="CDuplex.h" />
     <ClInclude Include="CFirstPerson.h" />

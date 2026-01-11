@@ -1,7 +1,6 @@
 #pragma once
 #include "CScene.h"
 #include "CCoin.h"
-#include "CDuplex.h"
 #include "CButton.h"
 #include "CButton2.h"
 
@@ -13,7 +12,6 @@ public:
   virtual ~CCointoss();
 
 public:
-  // CSceneÀ»(¸¦) ÅëÇØ »ó¼ÓµÊ
   void Initialize() override;
   int Update() override;
   void Late_Update() override;
@@ -27,6 +25,5 @@ private:
   CButton2* pButton2;
   CButton* pButton;
   CCoin*   pCoin;
-  CDuplex* pDuplex;
 };
 

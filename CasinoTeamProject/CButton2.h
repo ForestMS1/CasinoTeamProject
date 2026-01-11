@@ -12,6 +12,8 @@ public:
   void Late_Update() override;
   void Render(HDC hDC) override;
   void Release() override;
+  bool Get_Clicked() { return m_bIsClick; }
+
 private:
   RECT        m_tRect;
   bool        m_bIsClick;
