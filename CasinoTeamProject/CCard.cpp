@@ -12,7 +12,7 @@ CCard::CCard()
 {
     m_eRender = GAMEOBJECT;
     _sCardCnt++;
-    m_iIndex = _sCardCnt-1;
+    //m_iIndex = _sCardCnt-1;
 }
 
 CCard::CCard(CARDTYPE _type)
@@ -22,7 +22,7 @@ CCard::CCard(CARDTYPE _type)
 {
     m_eRender = GAMEOBJECT;
     _sCardCnt++;
-    m_iIndex = _sCardCnt - 1;
+    //m_iIndex = _sCardCnt - 1;
     m_eType = _type;
 }
 
@@ -169,7 +169,7 @@ void CCard::Late_Update()
     m_tRect.right = m_tInfo.vPos.x + m_tInfo.vScale.x * 0.5f;
     m_tRect.bottom = m_tInfo.vPos.y + m_tInfo.vScale.y * 0.5f;
 
-    if (GETSINGLE(CKeyMgr)->Key_Pressing(VK_LBUTTON))
+    if (GETSINGLE(CKeyMgr)->Key_Pressing(VK_LBUTTON) && !m_bIsOpen)
     {
         POINT ptMouse = { Get_Mouse().x, Get_Mouse().y };
         if (PtInRect(&m_tRect, ptMouse))
