@@ -422,7 +422,7 @@ void CCard::Render(HDC hDC)
             LineTo(hDC, m_dvEmblemVertex[0].x, m_dvEmblemVertex[0].y);
         }
 
-        TextOutA(hDC, m_tRect.left, m_tRect.top, CardType, lstrlenA(CardType));
+        //TextOutA(hDC, m_tRect.left, m_tRect.top, CardType, lstrlenA(CardType));
     }
 }
 
