@@ -25,6 +25,22 @@ void CCoin::Initialize()
 
   m_tInfo.vPos = { 400.f,400.f,0 };
   m_tInfo.vDir = { 1.f,0.f,0.f };
+
+
+  for (int i = 0; i < SEGMENT; ++i)
+  {
+      float theta = (2.f * D3DX_PI / SEGMENT) * i;
+      vLocal[i].x = cosf(theta) * 25.f;
+      vLocal[i].y = sinf(theta) * 25.f;
+      vLocal[i].z = 0.f;
+  }
+
+  for (int i = 0; i < SEGMENT; ++i)
+  {
+      D3DXVec3TransformCoord(&vWorld, &vLocal[i], &m_tInfo.matWorld);
+      tPoints[i].x = (LONG)(vWorld.x);
+      tPoints[i].y = (LONG)(vWorld.y);
+  }
 }
 
 int CCoin::Update()

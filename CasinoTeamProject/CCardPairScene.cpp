@@ -14,6 +14,7 @@ CCardPairScene::~CCardPairScene()
 void CCardPairScene::Initialize()
 {
     GETSINGLE(CCardMgr)->Initialize();
+    __super::Initialize();
 }
 
 int CCardPairScene::Update()
@@ -29,6 +30,8 @@ void CCardPairScene::Late_Update()
 
     if (GETSINGLE(CCardMgr)->Game_Clear())
         GETSINGLE(CSceneMgr)->ChangeScene(L"Title");
+
+    __super::Late_Update();
 }
 
 void CCardPairScene::Render(HDC hDC)

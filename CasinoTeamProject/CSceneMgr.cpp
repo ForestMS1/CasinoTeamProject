@@ -1,6 +1,8 @@
 #include "pch.h"
 #include "CSceneMgr.h"
 #include "CScene.h"
+#include "CObjMgr.h"
+#include "CGoTitleBtn.h"
 
 CSceneMgr* CSceneMgr::m_pInstance = nullptr;
 
