@@ -1,7 +1,7 @@
 #include "pch.h"
 #include "CScene.h"
-
-CScene::CScene()
+#include "CSceneMgr.h"
+CScene::CScene() : pBtn(nullptr)
 {
 
 }
@@ -13,7 +13,9 @@ CScene::~CScene()
 
 void CScene::Initialize()
 {
-
+	pBtn = new CGoTitleBtn;
+	pBtn->Initialize();
+	GETSINGLE(CObjMgr)->AddObject(OBJ_EFFECT, pBtn);
 }
 
 int CScene::Update()
@@ -24,7 +26,10 @@ int CScene::Update()
 
 void CScene::Late_Update()
 {
-
+	if (pBtn->ChangeNextScene())
+	{
+		GETSINGLE(CSceneMgr)->ChangeScene(L"Title");
+	}
 }
 
 void CScene::Render(HDC hDC)

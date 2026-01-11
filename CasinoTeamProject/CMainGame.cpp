@@ -7,10 +7,10 @@
 #include "CObjMgr.h"
 #include "CKeyMgr.h"
 #include "CCollisionMgr.h"
+#include "CCointoss.h"
 #include "CSceneSlotMachine.h"
 #include "CLineMgr.h"
 #include "CSceneLineShoot.h"
-#include "CCointoss.h"
 
 CMainGame::CMainGame() : m_iFps(0), m_dwLastTime(GetTickCount())
 {
@@ -31,9 +31,11 @@ void CMainGame::Initialize()
 	DeleteObject(hBit);
 
 
-	// 씬매니저에 씬 등록
-	//CScene* pScene = new CTitleScene;
-	CScene* pScene = new CSceneSlotMachine;
+
+	CScene* pScene = new CTitleScene;
+	GETSINGLE(CSceneMgr)->CreateScene(L"Title", pScene);
+
+  pScene = new CSceneSlotMachine;
 	GETSINGLE(CSceneMgr)->CreateScene(L"RopeJump", pScene);
 
 	pScene = new CSceneLineShoot;
@@ -51,8 +53,7 @@ void CMainGame::Initialize()
 	
 	//GETSINGLE(CSceneMgr)->ChangeScene(L"RussianRoullet");
 
-	GETSINGLE(CSceneMgr)->ChangeScene(L"RopeJump");
-
+	GETSINGLE(CSceneMgr)->ChangeScene(L"Title");
 	GETSINGLE(CObjMgr)->Initialize();
 }
 
@@ -80,11 +81,11 @@ void CMainGame::Late_Update()
 	GETSINGLE(CKeyMgr)->Late_Update();
 	GETSINGLE(CObjMgr)->Late_Update();
 
-	// 충돌 처리 예시 (아래처럼 추가하면 됩니다.)
+	// 충돌 처리 ?�시 (?�래처럼 추�??�면 ?�니??)
 	//if (!GETSINGLE(CObjMgr)->GetObjLayer(OBJ_PLAYER).empty())
 	//{
 	//	CCollisionMgr::Collision_RectEx(GETSINGLE(CObjMgr)->GetObjLayer(OBJ_PLAYER), GETSINGLE(CObjMgr)->GetObjLayer(OBJ_ITEM));
-	//	TODO : 충돌처리 추가
+	//	TODO : 충돌처리 추�?
 	//}
 }
 
@@ -107,19 +108,19 @@ void CMainGame::Render()
 	GETSINGLE(CObjMgr)->Render(m_hBackDC);
 
 	BitBlt(m_hDC,				// 복사 받을 DC
-		0,						// 복사 받을 공간의 LEFT	
-		0,						// 복사 받을 공간의 TOP
-		WINCX,					// 복사 받을 공간의 가로 
-		WINCY,					// 복사 받을 공간의 세로 
-		m_hBackDC,				// 복사 할 DC
-		0,						// 복사할 이미지의 LEFT, TOP
+		0,						// 복사 받을 공간??LEFT	
+		0,						// 복사 받을 공간??TOP
+		WINCX,					// 복사 받을 공간??가�?
+		WINCY,					// 복사 받을 공간???�로 
+		m_hBackDC,				// 복사 ??DC
+		0,						// 복사???��?지??LEFT, TOP
 		0,
-		SRCCOPY);				// 그대로 복사
+		SRCCOPY);				// 그�?�?복사
 }
 
 void CMainGame::Release()
 {
-	// 매니저들 삭제
+	// 매니?�????��
 	CSceneMgr::Destroy_Instance();
 	CObjMgr::Destroy_Instance();
 	CKeyMgr::Destroy_Instance();

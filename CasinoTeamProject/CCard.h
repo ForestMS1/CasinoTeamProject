@@ -36,6 +36,8 @@ private:
     float                       m_fFlipAngle;
 
     RECT                        m_tRect;    // 충돌 사각형
+
+    vector<D3DXVECTOR3>         m_dvEmblemVertex;
 public:
     static int             _sCardCnt;   // 총 카드 수
 };

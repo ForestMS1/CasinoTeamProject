@@ -1,27 +1,37 @@
 #pragma once
 #include "CObj.h"
+#include "time.h"
 class CCoin :  public CObj
 {
 public:
   CCoin();
-  ~CCoin();
+  virtual ~CCoin();
+  enum FRONTBACK { FB_START, FRONT, BACK, FB_END };
 public:
-  // CObj을(를) 통해 상속됨
   void Initialize() override;
   int Update() override;
   void Late_Update() override;
   void Render(HDC hDC) override;
   void Release() override;
-
+  
+  void  Set_Angle  (float fAngle) { m_fAngle = fAngle; }
+  bool  Get_Arrive ()             { return m_bArrive; }
+  void  Print_Text(HDC hDC);
 private:
   float m_fAngle;
   bool  m_isMove;
   bool  m_bisTop;
+  bool  m_bArrive;
 
-  D3DXVECTOR3 vLocal[4];
+  const int SEGMENT = 32;
+
+  vector<D3DXVECTOR3> vLocal;
   D3DXVECTOR3 vWorld;
 
-  POINT tPoints[4];
+
+  RECT        m_tRect;
+  FRONTBACK FB;
+  POINT tPoints[32];
   POINT m_SawPoints[6] ;
 };
 

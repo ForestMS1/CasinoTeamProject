@@ -88,11 +88,26 @@
     <Filter Include="Scene\CardPairScene\CardMgr">
       <UniqueIdentifier>{073c25c5-87b6-4865-90f8-3af5a0ddb5f3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Scene\CointossScene">
+      <UniqueIdentifier>{cfe0ba60-b945-4ba1-a952-1c0d8c1a74e8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\HO_Object">
+      <UniqueIdentifier>{a4b2b00e-4f80-4ceb-afa5-1257c0afa72a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\HO_Object\Coin">
+      <UniqueIdentifier>{6ddfe78b-b153-4ca4-8fee-1a4c2aada8cc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\HO_Object\Button">
+      <UniqueIdentifier>{3887eea7-6838-4785-8ac6-818c22a93801}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Object\LineShot">
       <UniqueIdentifier>{c11ced54-e92b-4b62-a56a-a5cfdbe97731}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Object\Coin">
-      <UniqueIdentifier>{6ddfe78b-b153-4ca4-8fee-1a4c2aada8cc}</UniqueIdentifier>
+    <Filter Include="Object\SceneSelectBtn">
+      <UniqueIdentifier>{56a4e73d-d446-44fa-adca-b0951281469e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\GoTitleBtn">
+      <UniqueIdentifier>{cda7899f-18e3-4fa6-ae99-8bea365d66b9}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -114,12 +129,6 @@
     <ClInclude Include="Define.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="CSceneMgr.h">
-      <Filter>Manager\SceneMgr</Filter>
-    </ClInclude>
-    <ClInclude Include="CScene.h">
-      <Filter>Scene</Filter>
-    </ClInclude>
     <ClInclude Include="CTitleScene.h">
       <Filter>Scene\TitleScene</Filter>
     </ClInclude>
@@ -137,27 +146,6 @@
     </ClInclude>
     <ClInclude Include="CCollisionMgr.h">
       <Filter>Manager\CollisionMgr</Filter>
-    </ClInclude>
-    <ClInclude Include="CITemSquare.h">
-      <Filter>Object\SlotMachine</Filter>
-    </ClInclude>
-    <ClInclude Include="CITemTriangle.h">
-      <Filter>Object\SlotMachine</Filter>
-    </ClInclude>
-    <ClInclude Include="CSlotItem.h">
-      <Filter>Object\SlotMachine</Filter>
-    </ClInclude>
-    <ClInclude Include="CAbstractFactory.h">
-      <Filter>소스 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="CMainGame.h">
-      <Filter>MainGame</Filter>
-    </ClInclude>
-    <ClInclude Include="CSceneSlotMachine.h">
-      <Filter>Scene</Filter>
-    </ClInclude>
-    <ClInclude Include="CFirstPerson.h">
-      <Filter>Object\LineJump</Filter>
     </ClInclude>
     <ClInclude Include="CSecondPerson.h">
       <Filter>Object\LineJump</Filter>
@@ -195,32 +183,11 @@
     <ClInclude Include="CRRPlayer.h">
       <Filter>Object\Revolver\RRPlayer</Filter>
     </ClInclude>
-    <ClInclude Include="CMagazine.h">
-      <Filter>Object\Revolver\Magazine</Filter>
+    <ClInclude Include="CButton.h">
+      <Filter>Object\HO_Object\Button</Filter>
     </ClInclude>
-    <ClInclude Include="CShotEventObserver.h">
-      <Filter>Object\Revolver\ShotEventObserver</Filter>
-    </ClInclude>
-    <ClInclude Include="CCardPairScene.h">
-      <Filter>Scene\CardPairScene</Filter>
-    </ClInclude>
-    <ClInclude Include="CCard.h">
-      <Filter>Object\Card</Filter>
-    </ClInclude>
-    <ClInclude Include="CCardMgr.h">
-      <Filter>Scene\CardPairScene\CardMgr</Filter>
-    </ClInclude>
-    <ClInclude Include="CScene.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="CSceneMgr.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="CScene.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="CSceneMgr.h">
-      <Filter>헤더 파일</Filter>
+    <ClInclude Include="CButton2.h">
+      <Filter>Object\HO_Object\Button</Filter>
     </ClInclude>
     <ClInclude Include="CLineShoot.h">
       <Filter>Object\LineShot</Filter>
@@ -231,17 +198,62 @@
     <ClInclude Include="CSceneLineShoot.h">
       <Filter>Scene</Filter>
     </ClInclude>
-    <ClInclude Include="CScene.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="CSceneMgr.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="CCoin.h">
-      <Filter>Object\Coin</Filter>
-    </ClInclude>
     <ClInclude Include="CCointoss.h">
       <Filter>Object\Coin</Filter>
+    </ClInclude>
+    <ClInclude Include="CMainGame.h">
+      <Filter>MainGame</Filter>
+    </ClInclude>
+    <ClInclude Include="CCard.h">
+      <Filter>Object\Card</Filter>
+    </ClInclude>
+    <ClInclude Include="CCardPairScene.h">
+      <Filter>Scene\CardPairScene</Filter>
+    </ClInclude>
+    <ClInclude Include="CCardMgr.h">
+      <Filter>Scene\CardPairScene\CardMgr</Filter>
+    </ClInclude>
+    <ClInclude Include="CCoin.h">
+      <Filter>Object\HO_Object\Coin</Filter>
+    </ClInclude>
+    <ClInclude Include="CCointoss.h">
+      <Filter>Scene\CointossScene</Filter>
+    </ClInclude>
+    <ClInclude Include="CMagazine.h">
+      <Filter>Object\Revolver\Magazine</Filter>
+    </ClInclude>
+    <ClInclude Include="CShotEventObserver.h">
+      <Filter>Object\Revolver\ShotEventObserver</Filter>
+    </ClInclude>
+    <ClInclude Include="CSceneSlotMachine.h">
+      <Filter>Object\SlotMachine</Filter>
+    </ClInclude>
+    <ClInclude Include="CSlotItem.h">
+      <Filter>Object\SlotMachine</Filter>
+    </ClInclude>
+    <ClInclude Include="CFirstPerson.h">
+      <Filter>Object\LineJump</Filter>
+    </ClInclude>
+    <ClInclude Include="CDuplex.h">
+      <Filter>Object\HO_Object\Coin</Filter>
+    </ClInclude>
+    <ClInclude Include="CScene.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="CITemSquare.h">
+      <Filter>Object\SlotMachine</Filter>
+    </ClInclude>
+    <ClInclude Include="CITemTriangle.h">
+      <Filter>Object\SlotMachine</Filter>
+    </ClInclude>
+    <ClInclude Include="CSceneMgr.h">
+      <Filter>Manager\SceneMgr</Filter>
+    </ClInclude>
+    <ClInclude Include="CSceneSelectBtn.h">
+      <Filter>Object\SceneSelectBtn</Filter>
+    </ClInclude>
+    <ClInclude Include="CGoTitleBtn.h">
+      <Filter>Object\GoTitleBtn</Filter>
     </ClInclude>
     <ClInclude Include="CDuplex.h">
       <Filter>헤더 파일</Filter>
@@ -263,12 +275,6 @@
     <ClCompile Include="pch.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="CSceneMgr.cpp">
-      <Filter>Manager\SceneMgr</Filter>
-    </ClCompile>
-    <ClCompile Include="CScene.cpp">
-      <Filter>Scene</Filter>
-    </ClCompile>
     <ClCompile Include="CTitleScene.cpp">
       <Filter>Scene\TitleScene</Filter>
     </ClCompile>
@@ -284,35 +290,11 @@
     <ClCompile Include="CKeyMgr.cpp">
       <Filter>Manager\KeyMgr</Filter>
     </ClCompile>
-    <ClCompile Include="CCollisionMgr.cpp">
-      <Filter>Manager\CollisionMgr</Filter>
+    <ClCompile Include="CCointoss.cpp">
+      <Filter>Scene\CointossScene</Filter>
     </ClCompile>
-    <ClCompile Include="CITemSquare.cpp">
-      <Filter>Object\SlotMachine</Filter>
-    </ClCompile>
-    <ClCompile Include="CSlotItem.cpp">
-      <Filter>Object\SlotMachine</Filter>
-    </ClCompile>
-    <ClCompile Include="CMainGame.cpp">
-      <Filter>MainGame</Filter>
-    </ClCompile>
-    <ClCompile Include="CSceneSlotMachine.cpp">
-      <Filter>Scene</Filter>
-    </ClCompile>
-    <ClCompile Include="CITemTriangle.cpp">
-      <Filter>Object\SlotMachine</Filter>
-    </ClCompile>
-    <ClCompile Include="CFirstPerson.cpp">
-      <Filter>Object\LineJump</Filter>
-    </ClCompile>
-    <ClCompile Include="CSecondPerson.cpp">
-      <Filter>Object\LineJump</Filter>
-    </ClCompile>
-    <ClCompile Include="CRope.cpp">
-      <Filter>Object\LineJump</Filter>
-    </ClCompile>
-    <ClCompile Include="CRopeDot.cpp">
-      <Filter>Object\LineJump</Filter>
+    <ClCompile Include="CCoin.cpp">
+      <Filter>Object\HO_Object\Coin</Filter>
     </ClCompile>
     <ClCompile Include="CRopeLine.cpp">
       <Filter>Object\LineJump</Filter>
@@ -341,28 +323,19 @@
     <ClCompile Include="CRRPlayer.cpp">
       <Filter>Object\Revolver\RRPlayer</Filter>
     </ClCompile>
-    <ClCompile Include="CMagazine.cpp">
-      <Filter>Object\Revolver\Magazine</Filter>
-    </ClCompile>
-    <ClCompile Include="CShotEventObserver.cpp">
-      <Filter>Object\Revolver\ShotEventObserver</Filter>
-    </ClCompile>
-    <ClCompile Include="CCardPairScene.cpp">
-      <Filter>Scene\CardPairScene</Filter>
-    </ClCompile>
-    <ClCompile Include="CCard.cpp">
-      <Filter>Object\Card</Filter>
-    </ClCompile>
-    <ClCompile Include="CCardMgr.cpp">
-      <Filter>Scene\CardPairScene\CardMgr</Filter>
-    </ClCompile>
-    <ClCompile Include="CScene.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="CSceneMgr.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="CScene.cpp">
+    <ClCompile Include="CCointoss.cpp">
+      <Filter>Scene\HO_Scene\CoinTossScene</Filter>
+    </ClCompile>
+    <ClCompile Include="CButton.cpp">
+      <Filter>Object\HO_Object\Button</Filter>
+    </ClCompile>
+    <ClCompile Include="CButton2.cpp">
+      <Filter>Object\HO_Object\Button</Filter>
+    </ClCompile>
+    <ClCompile Include="CSceneMgr.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="CSceneMgr.cpp">
@@ -377,9 +350,6 @@
     <ClCompile Include="CSceneLineShoot.cpp">
       <Filter>Scene</Filter>
     </ClCompile>
-    <ClCompile Include="CScene.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="CSceneMgr.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
@@ -389,17 +359,70 @@
     <ClCompile Include="CCointoss.cpp">
       <Filter>Object\Coin</Filter>
     </ClCompile>
+    <ClCompile Include="CPosinShoot.cpp">
+      <Filter>Object\LineShot</Filter>
+    <ClCompile Include="CMainGame.cpp">
+      <Filter>MainGame</Filter>
+    </ClCompile>
+    <ClCompile Include="CCollisionMgr.cpp">
+      <Filter>Manager\CollisionMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="CCard.cpp">
+      <Filter>Object\Card</Filter>
+    </ClCompile>
+    <ClCompile Include="CCardPairScene.cpp">
+      <Filter>Scene\CardPairScene</Filter>
+    </ClCompile>
+    <ClCompile Include="CCardMgr.cpp">
+      <Filter>Scene\CardPairScene\CardMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="CMagazine.cpp">
+      <Filter>Object\Revolver\Magazine</Filter>
+    </ClCompile>
+    <ClCompile Include="CShotEventObserver.cpp">
+      <Filter>Object\Revolver\ShotEventObserver</Filter>
+    </ClCompile>
+    <ClCompile Include="CSceneSlotMachine.cpp">
+      <Filter>Object\SlotMachine</Filter>
+    </ClCompile>
+    <ClCompile Include="CSlotItem.cpp">
+      <Filter>Object\SlotMachine</Filter>
+    </ClCompile>
+    <ClCompile Include="CSecondPerson.cpp">
+      <Filter>Object\LineJump</Filter>
+    </ClCompile>
+    <ClCompile Include="CFirstPerson.cpp">
+      <Filter>Object\LineJump</Filter>
+    </ClCompile>
+    <ClCompile Include="CDuplex.cpp">
+      <Filter>Object\HO_Object\Coin</Filter>
+    </ClCompile>
+    <ClCompile Include="CScene.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="CITemSquare.cpp">
+      <Filter>Object\SlotMachine</Filter>
+    </ClCompile>
+    <ClCompile Include="CITemTriangle.cpp">
+      <Filter>Object\SlotMachine</Filter>
+    </ClCompile>
+    <ClCompile Include="CSceneMgr.cpp">
+      <Filter>Manager\SceneMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="CRopeDot.cpp">
+      <Filter>Object\LineJump</Filter>
+    </ClCompile>
+    <ClCompile Include="CRope.cpp">
+      <Filter>Object\LineJump</Filter>
+    </ClCompile>
+    <ClCompile Include="CSceneSelectBtn.cpp">
+      <Filter>Object\SceneSelectBtn</Filter>
+    </ClCompile>
     <ClCompile Include="CDuplex.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="CScene.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="CSceneMgr.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="CPosinShoot.cpp">
-      <Filter>Object\LineShot</Filter>
+    <ClCompile Include="CGoTitleBtn.cpp">
+      <Filter>Object\GoTitleBtn</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

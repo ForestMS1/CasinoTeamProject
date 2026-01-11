@@ -33,14 +33,27 @@ void CCardMgr::Initialize()
 		}
 	}
 
+	// 카드 생성
 	for (int i = 0; i < 18; ++i)
 	{
 		CCard* pCard = new CCard(CCard::CARDTYPE(i / 2));
 		pCard->Set_Pos(WINCX, WINCY, 0.f);
-		pCard->Initialize();
+		//pCard->Initialize();
+		m_vecCardDeck.push_back(pCard);
 		GETSINGLE(CObjMgr)->AddObject(OBJ_ITEM, pCard);
 		//GETSINGLE(CObjMgr)->AddObject(OBJ_ITEM, CAbstractFactory<CCard>::Create(D3DXVECTOR3(WINCX, WINCY, 0.f)));
 	}
+
+	// 섞는다
+	std::random_device rd;
+	std::mt19937	   g(rd());
+	std::shuffle(m_vecCardDeck.begin(), m_vecCardDeck.end(), g);
+	for (size_t i = 0; i < m_vecCardDeck.size(); ++i)
+	{
+		m_vecCardDeck[i]->Set_Index(i);
+		m_vecCardDeck[i]->Initialize();
+	}
+	m_vecCardDeck.clear(); // <- 섞는용도, 더이상 관리하지않음
 
 	m_pDeterminingCard.first = nullptr;
 	m_pDeterminingCard.second = nullptr;

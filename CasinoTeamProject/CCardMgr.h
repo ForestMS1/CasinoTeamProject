@@ -33,7 +33,10 @@ public:
 	
 private:
 	vector<D3DXVECTOR3> m_vecCardPosition;
+	vector<CCard*>		m_vecCardDeck;
 	pair<CCard*, CCard*> m_pDeterminingCard;
+
+
 	const int m_iMaxPairCnt = 9;
 	int		  m_iPairCnt = 0;
 };

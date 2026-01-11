@@ -18,8 +18,12 @@ CRussianRoulletScene::~CRussianRoulletScene()
 
 void CRussianRoulletScene::Initialize()
 {
+	__super::Initialize();
+
 	CObj* pRevolver = new CRevolver;
 	CObj* pMagazine = new CMagazine;
+	pRevolver->Initialize();
+	pMagazine->Initialize();
 	GETSINGLE(CObjMgr)->AddObject(OBJ_ITEM, pRevolver);
 	GETSINGLE(CObjMgr)->AddObject(OBJ_ITEM, pMagazine);
 	GETSINGLE(CShotEventObserver)->Initialize(pRevolver, pMagazine);
@@ -40,7 +44,7 @@ void CRussianRoulletScene::Late_Update()
 {
 	//	총알과 사람 충돌처리
 	CCollisionMgr::Collision_Rect(GETSINGLE(CObjMgr)->GetObjLayer(OBJ_PLAYER), GETSINGLE(CObjMgr)->GetObjLayer(OBJ_ITEM));
-
+	__super::Late_Update();
 }
 
 void CRussianRoulletScene::Render(HDC hDC)
@@ -50,4 +54,5 @@ void CRussianRoulletScene::Render(HDC hDC)
 void CRussianRoulletScene::Release()
 {
 	CShotEventObserver::Destroy_Instance();
+	GETSINGLE(CObjMgr)->DeleteAllLayer();
 }
