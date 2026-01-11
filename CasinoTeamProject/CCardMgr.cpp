@@ -53,7 +53,7 @@ void CCardMgr::Initialize()
 		m_vecCardDeck[i]->Set_Index(i);
 		m_vecCardDeck[i]->Initialize();
 	}
-	m_vecCardDeck.clear();
+	m_vecCardDeck.clear(); // <- 섞는용도, 더이상 관리하지않음
 
 	m_pDeterminingCard.first = nullptr;
 	m_pDeterminingCard.second = nullptr;
