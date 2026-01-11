@@ -13,23 +13,28 @@ CCoin::~CCoin()
 
 void CCoin::Initialize()
 {
-  m_tInfo.vPos = { 400,450,0 };
+  vLocal.resize(SEGMENT);
+
+  m_bisTop = false;
+  m_tInfo.vPos = { 400.f,450.f,0 };
   m_tInfo.vDir = { 1.f,0.f,0.f };
 }
 
 int CCoin::Update()
 {
   m_isMove = false;
-  D3DXMATRIX matScale, matRotz, matTrans;
+
+  D3DXMATRIX matScale, matRotX, matTrans;
 
   D3DXMatrixScaling(&matScale, 1.f, 1.f, 1.f);
-  D3DXMatrixRotationZ(&matRotz, m_fAngle);
+  D3DXMatrixRotationX(&matRotX, m_fAngle);
   D3DXMatrixTranslation(&matTrans, 
     m_tInfo.vPos.x,
     m_tInfo.vPos.y,
     m_tInfo.vPos.z);
 
-  m_tInfo.matWorld = matScale * matRotz * matTrans;
+  m_tInfo.matWorld = matScale * matRotX * matTrans;
+
 
   if (GetAsyncKeyState(VK_SPACE))
   {
@@ -44,6 +49,8 @@ int CCoin::Update()
     { 
       m_fAngle = 0.f;
       m_bisTop = false;
+      m_bArrive = true;
+
     }
   }
   
@@ -62,33 +69,51 @@ void CCoin::Late_Update()
 
 void CCoin::Render(HDC hDC)
 {
-  // µ¿Àü Å©±â ¼³Á¤ (·ÎÄÃ °ø°£)
-    float fHalfWidth = 50.f;
-    float fHalfHeight = 8.f;
-  
-    // ·ÎÄÃ °ø°£ÀÇ 4°³ ²ÀÁþÁ¡ (»ç°¢Çü ÂïÀ» ‹š »ç¿ëÇÏ´Â Á¡µé)
-    D3DXVECTOR3 vLocal[4] = {
-      D3DXVECTOR3(-fHalfWidth, -fHalfHeight, 0.f),
-      D3DXVECTOR3(fHalfWidth, -fHalfHeight, 0.f),
-      D3DXVECTOR3(fHalfWidth,  fHalfHeight, 0.f),
-      D3DXVECTOR3(-fHalfWidth,  fHalfHeight, 0.f)
-    };
-  
-    for (int i = 0; i < 4; ++i)
+  // ë™ì „ í¬ê¸° ì„¤ì • (ë¡œì»¬ ê³µê°„)
+   // float fHalfWidth = 50.f;
+   // float fHalfHeight = 8.f;
+   //
+   // // ë¡œì»¬ ê³µê°„ì˜ 4ê°œ ê¼­ì§“ì  (ì‚¬ê°í˜• ì°ì„ Â‹Âš ì‚¬ìš©í•˜ëŠ” ì ë“¤)
+   // D3DXVECTOR3 vLocal[4] = {
+   //   D3DXVECTOR3(-fHalfWidth, -fHalfHeight, 0.f),
+   //   D3DXVECTOR3(fHalfWidth, -fHalfHeight, 0.f),
+   //   D3DXVECTOR3(fHalfWidth,  fHalfHeight, 0.f),
+   //   D3DXVECTOR3(-fHalfWidth,  fHalfHeight, 0.f)
+   // };
+   //
+   // for (int i = 0; i < 4; ++i)
+   // {
+   //   D3DXVec3TransformCoord(&vWorld, &vLocal[i], &m_tInfo.matWorld);
+   //   tPoints[i].x = (LONG)(vWorld.x);
+   //   tPoints[i].y = (LONG)(vWorld.y);
+   // }  
+   //
+   // Polygon(hDC, tPoints, 4);
+
+    for (int i = 0; i < SEGMENT; ++i)
+    {
+      float theta = (2.f * D3DX_PI / SEGMENT) * i;
+      vLocal[i].x = cosf(theta) * 25.f;
+      vLocal[i].y = sinf(theta) * 25.f;
+      vLocal[i].z = 0.f;
+    }
+
+    for (int i = 0; i < SEGMENT; ++i)
     {
       D3DXVec3TransformCoord(&vWorld, &vLocal[i], &m_tInfo.matWorld);
       tPoints[i].x = (LONG)(vWorld.x);
       tPoints[i].y = (LONG)(vWorld.y);
-    }  
+    }
 
-    Polygon(hDC, tPoints, 4);
-         
+    Polygon(hDC, tPoints, 32);
+
+  
  // int iGap = 8;
  //
- // // tPoints[0].x (¿ÞÂÊ ³¡) ºÎÅÍ tPoints[1].x (¿À¸¥ÂÊ ³¡) ±îÁö ¹Ýº¹
+ // // tPoints[0].x (ì™¼ìª½ ë) ë¶€í„° tPoints[1].x (ì˜¤ë¥¸ìª½ ë) ê¹Œì§€ ë°˜ë³µ
  // for (LONG x = tPoints[0].x + iGap; x < tPoints[1].x; x += iGap)
  // {
- //   // À§ÂÊ yÁÂÇ¥(tPoints[0].y)¿¡¼­ ¾Æ·¡ÂÊ yÁÂÇ¥(tPoints[3].y)·Î ¼± ±ß±â
+ //   // ìœ„ìª½ yì¢Œí‘œ(tPoints[0].y)ì—ì„œ ì•„ëž˜ìª½ yì¢Œí‘œ(tPoints[3].y)ë¡œ ì„  ê¸‹ê¸°
  //   MoveToEx(hDC, x, tPoints[0].y, nullptr);
  //   LineTo(hDC, x, tPoints[3].y);
  // }

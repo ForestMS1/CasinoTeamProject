@@ -1,6 +1,5 @@
 #include "pch.h"
 #include "CCointoss.h"
-#include "CCoin.h"
 
 CCointoss::CCointoss()
 {
@@ -12,12 +11,26 @@ CCointoss::~CCointoss()
 
 void CCointoss::Initialize()
 {
-  CCoin* testCoin = new CCoin;
-  GETSINGLE(CObjMgr)->AddObject(OBJ_PLAYER, testCoin);
+
+  CCoin* pCoin = new CCoin;
+  GETSINGLE(CObjMgr)->AddObject(OBJ_PLAYER, pCoin);
+
+  CButton* pButton = new CButton;
+  GETSINGLE(CObjMgr)->AddObject(OBJ_EFFECT, pButton);
+
+  CButton2* pButton2 = new CButton2;
+  GETSINGLE(CObjMgr)->AddObject(OBJ_EFFECT, pButton2);
+
 }
 
 int CCointoss::Update()
 {
+  //if (pCoin->Get_Arrive())
+  //{
+  //}
+  //CDuplex* pDuplex = new CDuplex;
+  //GETSINGLE(CObjMgr)->AddObject(OBJ_PLAYER, pDuplex);
+
   return 0;
 }
 
